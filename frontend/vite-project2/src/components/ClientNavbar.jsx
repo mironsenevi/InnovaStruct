@@ -8,14 +8,14 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
-import logo from "../assets/Innovastruct-new-logo.png"; 
+import logo from "../assets/logo.png"; 
 
 function ClientNavbar() {
   return (
     <nav className="fixed top-0 left-0 h-full w-0 sm:w-64 bg-yellow-400 text-white overflow-hidden transition-all duration-300 z-50">
       <div className="px-6 py-4 border-b border-yellow-300">
         <div className="flex items-center gap-4">
-        <img src={logo} alt="InnovaStruct Logo" className="w-9 h-10.5 -translate-y-0.5 " /> {/* Add the logo */}
+        <img src={logo} alt="InnovaStruct Logo" className="w-9 h-10.5 -translate-y-0.5 " /> 
         <h2 className="text-2xl font-bold text-black" >InnovaStruct</h2>
         </div>
       </div>

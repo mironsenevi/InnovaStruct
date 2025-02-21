@@ -5,7 +5,6 @@ const AdsSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Example ads data - replace with your API data
   const ads = [
     {
       id: 1,
@@ -76,7 +75,6 @@ const AdsSlideshow = () => {
           ))}
         </div>
         
-        {/* Make navigation controls responsive */}
         <button 
           className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 sm:p-2 rounded-full"
           onClick={prevSlide}
@@ -90,7 +88,6 @@ const AdsSlideshow = () => {
           <ChevronRight size={20} className="sm:w-6 sm:h-6" />
         </button>
 
-        {/* Pagination Dots */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {ads.map((_, index) => (
             <button
@@ -108,7 +105,6 @@ const AdsSlideshow = () => {
         </div>
       </div>
 
-      {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
         <div 
           className="h-full bg-yellow-500 transition-all duration-500"

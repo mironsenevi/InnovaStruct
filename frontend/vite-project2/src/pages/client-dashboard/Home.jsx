@@ -7,14 +7,14 @@ const Home = () => {
   const mainCards = [
     {
       title: 'Companies',
-      icon: <Building size={48} />, // Increased icon size
+      icon: <Building size={48} />,
       description: 'Manage your company profiles and details',
       link: '/client/companies',
       color: 'bg-gradient-to-r from-blue-500 to-blue-600'
     },
     {
       title: 'Tenders',
-      icon: <FileText size={48} />, // Increased icon size
+      icon: <FileText size={48} />,
       description: 'Access and manage tender documents',
       link: '/client/tender',
       color: 'bg-gradient-to-r from-purple-500 to-purple-600',
@@ -50,7 +50,6 @@ const Home = () => {
         
         <AdsSlideshow />
         
-        {/* Main Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           {mainCards.map((card, index) => (
             <div key={index} className="relative group">
@@ -67,14 +66,12 @@ const Home = () => {
                   </div>
                   <p className="text-lg opacity-90 mb-4">{card.description}</p>
                   
-                  {/* Additional stats or info could go here */}
                   <div className="mt-auto text-sm opacity-75">
                     Click to view details →
                   </div>
                 </div>
               </Link>
               
-              {/* Create Tender Button - Only for Tenders card */}
               {card.action && (
                 <Link
                   to={card.action.link}
@@ -88,7 +85,6 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Secondary Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {secondaryCards.map((card, index) => (
             <Link 

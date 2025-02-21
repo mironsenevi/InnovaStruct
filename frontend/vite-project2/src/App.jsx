@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/client-dashboard/Home";
 import Login from "./pages/Authentication/Login";
 import Profile from "./pages/client-dashboard/Profile";
@@ -10,13 +10,20 @@ const App = () => {
   return (
     <Router>
       <div className="flex">
-        <ClientNavbar />
         <div className="flex-1">
           <Routes>
-            <Route path="/client/home" element={<Home />} />
+            <Route path="/" element={<Navigate to="/client/home" replace />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/client/profile" element={<Profile />} />
-            <Route path="/client/settings" element={<Settings />} />
+            <Route path="/client/*" element={
+              <>
+                <ClientNavbar />
+                <Routes>
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/settings" element={<Settings />} />
+                </Routes>
+              </>
+            } />
           </Routes>
         </div>
       </div>
