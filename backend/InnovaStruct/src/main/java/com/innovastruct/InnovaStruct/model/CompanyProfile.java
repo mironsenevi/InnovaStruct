@@ -1,4 +1,4 @@
-package com.innovastruct.InnovaStruct.models;
+package com.innovastruct.InnovaStruct.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
