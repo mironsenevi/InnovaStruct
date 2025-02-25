@@ -1,5 +1,5 @@
 import React from "react";
-import CompanyNavbar from 'e:/InnovaStruct/frontend/vite-project2/src/pages/company-dashboard/companyHome.jsx';
+import CompanyNavbar from 'e:/InnovaStruct/frontend/vite-project2/src/components/companyNavbar';
 
 const CompanyHome = () => {
   return (
