@@ -8,11 +8,27 @@
 
 body {
   @apply antialiased;
-  max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .responsive-container {
   @apply w-full px-4 sm:px-6 lg:px-8 mx-auto;
   max-width: min(100%, var(--max-width));
+}
+
+/* Add support for backdrop blur in Firefox */
+@supports (-moz-appearance: none) {
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Safari and Edge compatibility for backdrop filter */
+@supports (backdrop-filter: blur(12px)) {
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
 }
