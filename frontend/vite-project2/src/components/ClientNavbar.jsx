@@ -20,7 +20,7 @@ function ClientNavbar() {
           <li>
             <button className="btn btn-wide border-none justify-start shadow-none bg-transparent hover:bg-white group text-lg">
               <a
-                href="#"
+                href="/"
                 className="flex items-center gap-3 text-white group-hover:text-black"
               >
                 <Home className="w-5 h-5" />
