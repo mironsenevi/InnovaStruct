@@ -1,5 +1,5 @@
 // src/pages/Settings/SettingsPage.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Add useEffect import
 import { Bell, User, Palette, Shield, Globe } from 'lucide-react';
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/react';
 import ProfileSettings from '../../components/Setting/ProfileSettings';
@@ -9,6 +9,21 @@ import PrivacySettings from '../../components/Setting/PrivacySettings';
 import RegionSettings from '../../components/Setting/RegionSettings';
 
 const SettingsPage = () => {
+  // Add state for sidebar minimization
+  const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
+  
+  // Add effect to listen for sidebar state changes
+  useEffect(() => {
+    const handleSidebarStateChange = (event) => {
+      setIsSidebarMinimized(event.detail);
+    };
+    
+    window.addEventListener('sidebarStateChange', handleSidebarStateChange);
+    return () => {
+      window.removeEventListener('sidebarStateChange', handleSidebarStateChange);
+    };
+  }, []);
+
   const tabs = [
     { name: 'Profile', icon: <User className="w-5 h-5" />, component: ProfileSettings },
     { name: 'Notifications', icon: <Bell className="w-5 h-5" />, component: NotificationSettings },
@@ -18,7 +33,10 @@ const SettingsPage = () => {
   ];
 
   return (
-    <div className="ml-0 sm:ml-64 p-4 sm:p-8 transition-all duration-300 min-h-screen">
+    // Update the div to use dynamic margin based on sidebar state
+    <div className={`p-5 sm:p-8 transition-all duration-300 ${
+      isSidebarMinimized ? 'ml-20' : 'ml-0 sm:ml-72'
+    }`}>
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-8">Settings</h1>
         

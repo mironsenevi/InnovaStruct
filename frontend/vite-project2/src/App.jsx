@@ -11,6 +11,9 @@ import ConstructionBiddingInterface from "./pages/client-dashboard/ConstructionB
 import BackgroundWrapper from "./components/BackgroundWrapper";
 import CompanyHome from "./pages/company-dashboard/Home";
 
+
+
+
 const App = () => {
   return (
     <Router>
@@ -24,13 +27,13 @@ const App = () => {
             <div className="flex min-h-screen">
               <ClientNavbar />
               <div className="flex-1 transition-all duration-300" id="main-content">
-                <Routes>
-                  <Route path="home" element={<Home />} />
-                  <Route path="profile" element={<Profile />} />
-                  <Route path="settings" element={<SettingsPage />} />
-                  <Route path="company/:id" element={<CompanyProfilePage />} />
-                  <Route path="tender" element={<ConstructionBiddingInterface />} />
-                  <Route path="tender/create" element={<ConstructionBiddingInterface />} />
+              <Routes>
+                <Route path="home" element={<Home />} />
+                <Route path="profile" element={<Profile />} />
+                <Route path="settings" element={<SettingsPage />} />
+                <Route path="company/:id" element={<CompanyProfilePage />} />
+                <Route path="tender" element={<ConstructionBiddingInterface />} />
+                <Route path="tender/create" element={<ConstructionBiddingInterface />} />
                 </Routes>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Upload, MapPin, Building, Clock, FileText, Calendar, Users } from 'lucide-react';
 
 const ConstructionBiddingInterface = () => {
@@ -10,6 +10,20 @@ const ConstructionBiddingInterface = () => {
     budget: '',
     deadline: ''
   });
+  // Add state for sidebar minimization
+  const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
+  
+  // Add effect to listen for sidebar state changes
+  useEffect(() => {
+    const handleSidebarStateChange = (event) => {
+      setIsSidebarMinimized(event.detail);
+    };
+    
+    window.addEventListener('sidebarStateChange', handleSidebarStateChange);
+    return () => {
+      window.removeEventListener('sidebarStateChange', handleSidebarStateChange);
+    };
+  }, []);
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
@@ -32,9 +46,10 @@ const ConstructionBiddingInterface = () => {
   };
 
   return (
-    // In ConstructionBiddingInterface.jsx, change this line:
-<div className="ml-0 sm:ml-64 p-4 sm:p-8 transition-all duration-300 min-h-screen">
-<div className="max-w-7xl mx-auto">
+    <div className={`p-4 sm:p-8 transition-all duration-300 min-h-screen ${
+      isSidebarMinimized ? 'ml-20' : 'ml-0 sm:ml-72'
+    }`}>
+      <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">

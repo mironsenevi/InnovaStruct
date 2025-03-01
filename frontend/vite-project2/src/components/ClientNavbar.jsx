@@ -83,7 +83,7 @@ function ClientNavbar() {
   const navItems = [
     { href: "/client/home", icon: <Home />, text: "Home" },
     { href: "/client/company/1", icon: <Building />, text: "Companies" },
-    { href: "/client/contacts", icon: <Users />, text: "Contacts" },
+    { href: "/client/contacts", icon: <Users />, text: "Contacts" }, // This is correct
     { href: "/client/tender", icon: <FileText />, text: "Tenders" },
     { href: "/client/settings", icon: <Settings />, text: "Settings" }
   ];
