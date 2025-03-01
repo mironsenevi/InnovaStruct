@@ -29,8 +29,7 @@ const Portfolio = () => {
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center p-6 bg-yellow-500 rounded-xl shadow-md cursor-pointer hover:bg-yellow-600 transition-colors"
-              >
+                className="flex flex-col items-center justify-center p-6 bg-yellow-500 rounded-xl shadow-md cursor-pointer hover:bg-yellow-600 transition-colors">
                 <span className="text-3xl mb-2">{item.icon}</span>
                 <span className="font-semibold">{item.title}</span>
               </div>
