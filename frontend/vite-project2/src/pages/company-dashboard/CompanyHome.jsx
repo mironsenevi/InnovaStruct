@@ -36,54 +36,10 @@ const CompanyHome = () => {
 
         {/* Dashboard Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Companies Card */}
-          <div className="bg-yellow-500 text-white p-6 rounded-lg shadow card">
-            <div className="flex items-center justify-between">
-              <div>
-                <Building2 size={32} />
-                <h2 className="text-xl font-bold mt-2">Companies</h2>
-                <p className="mt-2">Manage your company profiles and details</p>
-                <button className="mt-4 text-sm underline flex items-center">Click to view details</button>
-              </div>
-            </div>
-          </div>
-
-          {/* Tenders Card */}
-          <div className="bg-yellow-500 text-white p-6 rounded-lg shadow card">
-            <div className="flex items-center justify-between">
-              <div>
-                <FileText size={32} />
-                <h2 className="text-xl font-bold mt-2">Tenders</h2>
-                <p className="mt-2">Access and manage tender documents</p>
-                <button className="mt-4 text-sm underline flex items-center">Click to view details</button>
-              </div>
-              <div className="bg-white bg-opacity-20 p-2 rounded-full">
-                <Plus size={24} className="text-white" />
-              </div>
-            </div>
-          </div>
-
-          {/* Contacts Card */}
-          <div className="bg-yellow-500 text-white p-6 rounded-lg shadow card">
-            <div className="flex items-center justify-between">
-              <div>
-                <Users size={32} />
-                <h2 className="text-xl font-bold mt-2">Contacts</h2>
-                <p className="mt-2">View and manage your business contacts</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Settings Card */}
-          <div className="bg-yellow-500 text-white p-6 rounded-lg shadow card">
-            <div className="flex items-center justify-between">
-              <div>
-                <Settings size={32} />
-                <h2 className="text-xl font-bold mt-2">Settings</h2>
-                <p className="mt-2">Customize your account options</p>
-              </div>
-            </div>
-          </div>
+          <DashboardCard icon={<Building2 size={32} />} title="Companies" description="Manage your company profiles and details" />
+          <DashboardCard icon={<FileText size={32} />} title="Tenders" description="Access and manage tender documents" />
+          <DashboardCard icon={<Users size={32} />} title="Contacts" description="View and manage your business contacts" />
+          <DashboardCard icon={<Settings size={32} />} title="Settings" description="Customize your account options" />
         </div>
 
         {/* Test Company Profile Button */}
@@ -92,6 +48,18 @@ const CompanyHome = () => {
             Test Company Profile
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function DashboardCard({ icon, title, description }) {
+  return (
+    <div className="bg-yellow-500 text-white p-6 rounded-lg shadow flex items-center space-x-4">
+      {icon}
+      <div>
+        <h4 className="text-xl font-bold">{title}</h4>
+        <p className="text-sm mt-2">{description}</p>
       </div>
     </div>
   );
