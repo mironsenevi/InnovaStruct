@@ -1,4 +1,3 @@
-import React from "react";
 import CompanyNavbar from 'e:/InnovaStruct/frontend/vite-project2/src/components/companyNavbar';
 import { Building2, FileText, Users, Settings, Plus } from "lucide-react";
 
