@@ -1,6 +1,8 @@
 package com.innovastruct.InnovaStruct.models;
 
 import org.springframework.data.annotation.Id;
+
+import java.util.Date;
 import java.util.List;
 
 public class Tender {
@@ -11,6 +13,7 @@ public class Tender {
     private String description;
     private String location;
     private String budgetRange;
+    private Date deadline;
     private List<String> projectDocuments;
 
 
