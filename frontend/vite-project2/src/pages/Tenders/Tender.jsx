@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Calendar, Building } from "lucide-react";
+import { Plus, Calendar, Building, X } from "lucide-react";
 
 const tenders = [
   {
@@ -48,6 +48,7 @@ const tenders = [
 
 export default function CompanyHome() {
   const [search, setSearch] = useState("");
+  const [selectedTender, setSelectedTender] = useState(null);
 
   const filteredTenders = tenders.filter((tender) =>
     tender.title.toLowerCase().includes(search.toLowerCase())
@@ -83,11 +84,42 @@ export default function CompanyHome() {
             </div>
             <div className="flex justify-between items-center mt-4">
               <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">{tender.status}</span>
-              <button className="bg-yellow-500 text-white px-3 py-1 rounded">View Details</button>
+              <button 
+                className="bg-yellow-500 text-white px-3 py-1 rounded"
+                onClick={() => setSelectedTender(tender)}
+              >
+                View Details
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {selectedTender && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold">{selectedTender.title}</h2>
+              <button onClick={() => setSelectedTender(null)} className="text-gray-500">
+                <X size={20} />
+              </button>
+            </div>
+            <p>{selectedTender.description}</p>
+            <div className="text-sm text-gray-500 mt-2">
+              <Building size={16} className="inline-block mr-2" /> {selectedTender.company}
+            </div>
+            <div className="text-sm text-gray-500 mt-1">
+              <Calendar size={16} className="inline-block mr-2" /> Deadline: {selectedTender.deadline}
+            </div>
+            <button
+              onClick={() => setSelectedTender(null)}
+              className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded w-full"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
