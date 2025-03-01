@@ -1,20 +1,23 @@
+// src/components/CompanyNavbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 import {
-  Home,
+  LayoutDashboard,
   Building,
-  Users,
   FileText,
+  Users,
+  Calendar,
+  TrendingUp,
   Settings,
   LogOut,
   ChevronLeft,
   ChevronRight,
-  User
+  Briefcase
 } from "lucide-react";
 import logo from "../assets/logo.png";
 
-// Helper component for nav items with PropTypes
+// Helper component for nav items
 const NavItem = ({ href, icon, text, isMinimized, isActive }) => (
   <li className="w-full">
     <Link
@@ -22,12 +25,12 @@ const NavItem = ({ href, icon, text, isMinimized, isActive }) => (
       className={`flex items-center px-3 py-3 rounded-xl transition-all duration-200 w-full
         ${isActive 
           ? 'bg-white/20 text-white font-medium shadow-sm' 
-          : 'text-yellow-900 hover:bg-white/10'}`}
+          : 'text-blue-900 hover:bg-white/10'}`}
     >
       <div className={`flex items-center ${!isMinimized && 'w-full'}`}>
         <div className={`${isActive ? 'bg-white/20' : 'bg-transparent'} p-2 rounded-lg`}>
           {React.cloneElement(icon, { 
-            className: `${isActive ? 'text-white' : 'text-yellow-800'} w-5 h-5`
+            className: `${isActive ? 'text-white' : 'text-blue-800'} w-5 h-5`
           })}
         </div>
         
@@ -52,17 +55,11 @@ NavItem.propTypes = {
   isActive: PropTypes.bool.isRequired
 };
 
-function ClientNavbar() {
+function CompanyNavbar() {
   const [isMinimized, setIsMinimized] = useState(window.innerWidth < 768);
   const location = useLocation();
-  const [greeting, setGreeting] = useState('');
   
   useEffect(() => {
-    const hour = new Date().getHours();
-    if (hour < 12) setGreeting('Good morning');
-    else if (hour < 18) setGreeting('Good afternoon');
-    else setGreeting('Good evening');
-    
     // Handle responsive behavior
     const handleResize = () => {
       if (window.innerWidth < 768 && !isMinimized) {
@@ -81,11 +78,13 @@ function ClientNavbar() {
   };
 
   const navItems = [
-    { href: "/client/home", icon: <Home />, text: "Home" },
-    { href: "/client/company/1", icon: <Building />, text: "Companies" },
-    { href: "/client/contacts", icon: <Users />, text: "Contacts" },
-    { href: "/client/tender", icon: <FileText />, text: "Tenders" },
-    { href: "/client/settings", icon: <Settings />, text: "Settings" }
+    { href: "/company/home", icon: <LayoutDashboard />, text: "Dashboard" },
+    { href: "/company/projects", icon: <Building />, text: "Projects" },
+    { href: "/company/quotes", icon: <FileText />, text: "Quote Requests" },
+    { href: "/company/clients", icon: <Users />, text: "Clients" },
+    { href: "/company/schedule", icon: <Calendar />, text: "Schedule" },
+    { href: "/company/performance", icon: <TrendingUp />, text: "Performance" },
+    { href: "/company/settings", icon: <Settings />, text: "Settings" }
   ];
 
   return (
@@ -99,23 +98,23 @@ function ClientNavbar() {
       )}
     
       <div 
-        className={`fixed h-screen bg-gradient-to-b from-yellow-400 to-yellow-300 shadow-xl flex flex-col 
+        className={`fixed h-screen bg-gradient-to-b from-blue-400 to-blue-300 shadow-xl flex flex-col 
         transition-all duration-300 ${isMinimized ? 'w-20' : 'w-72'} z-20`}
       >
         {/* Logo and toggle button */}
-        <div className="p-4 flex justify-between items-center border-b border-yellow-300/50">
+        <div className="p-4 flex justify-between items-center border-b border-blue-300/50">
           {!isMinimized && (
             <div className="flex items-center gap-3">
               <div className="bg-white p-2 rounded-lg shadow-sm">
                 <img src={logo} alt="InnovaStruct Logo" className="w-8 h-8" /> 
               </div>
-              <h2 className="text-xl font-bold text-yellow-900">InnovaStruct</h2>
+              <h2 className="text-xl font-bold text-blue-900">InnovaStruct</h2>
             </div>
           )}
           
           <button 
             onClick={toggleMinimize}
-            className={`p-2 bg-white/20 hover:bg-white/30 text-yellow-800 rounded-lg transition-all
+            className={`p-2 bg-white/20 hover:bg-white/30 text-blue-800 rounded-lg transition-all
             ${isMinimized ? 'mx-auto' : ''}`}
             aria-label={isMinimized ? "Expand sidebar" : "Minimize sidebar"}
           >
@@ -123,19 +122,19 @@ function ClientNavbar() {
           </button>
         </div>
         
-        {/* User profile - visible when not minimized */}
+        {/* Company profile - visible when not minimized */}
         {!isMinimized && (
           <div className="mt-6 px-4">
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
-                  <User className="w-6 h-6 text-yellow-600" />
+                  <Briefcase className="w-6 h-6 text-blue-600" />
                 </div>
-                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-yellow-300 rounded-full"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-blue-300 rounded-full"></div>
               </div>
               <div>
-                <p className="text-sm font-medium text-yellow-900">Omindu Abewardane</p>
-                <p className="text-xs text-yellow-800/70">{greeting}!</p>
+                <p className="text-sm font-medium text-blue-900">Lanka Constructions</p>
+                <p className="text-xs text-blue-800/70">Company Account</p>
               </div>
             </div>
           </div>
@@ -158,7 +157,7 @@ function ClientNavbar() {
         </div>
         
         {/* Footer with logout */}
-        <div className="p-4 border-t border-yellow-300/50">
+        <div className="p-4 border-t border-blue-300/50">
           <Link 
             to="/logout" 
             className={`flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 
@@ -174,4 +173,4 @@ function ClientNavbar() {
   );
 }
 
-export default ClientNavbar;
+export default CompanyNavbar;
