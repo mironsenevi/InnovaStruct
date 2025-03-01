@@ -4,6 +4,7 @@ import Home from "./pages/client-dashboard/Home";
 import Login from "./pages/Authentication/Login";
 import CompanyHome from  "e:/InnovaStruct/frontend/vite-project2/src/pages/company-dashboard/companyHome"
 import Portfolio from "e:/InnovaStruct/frontend/vite-project2/src/pages/Portfolio/Portfolio";
+import Contacts from "./pages/Contacts/Contacts";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/client/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contacts" element={<Contacts/>}/>
         </Routes>
       </Router>
     </div>
