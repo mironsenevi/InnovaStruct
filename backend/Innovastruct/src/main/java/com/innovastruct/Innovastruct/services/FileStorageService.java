@@ -1,28 +1,34 @@
 package com.innovastruct.Innovastruct.services;
 
 
+
+import com.mongodb.client.gridfs.GridFSBucket;
+import com.mongodb.client.gridfs.model.GridFSUploadOptions;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.UUID;
+import java.io.InputStream;
 
 @Service
 public class FileStorageService {
-    private final Path uploadDir = Paths.get("uploads");
+    private final GridFSBucket gridFSBucket;
 
-    public FileStorageService() throws IOException {
-        if (!Files.exists(uploadDir)) {
-            Files.createDirectories(uploadDir);
-        }
+    public FileStorageService(GridFSBucket gridFSBucket) {
+        this.gridFSBucket = gridFSBucket;
     }
 
     public String storeFile(MultipartFile file) throws IOException {
-        String fileName = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
-        Path targetLocation = uploadDir.resolve(fileName);
-        Files.copy(file.getInputStream(), targetLocation);
-        return "/uploads/" + fileName; // Return file URL
+        InputStream inputStream = file.getInputStream();
+        GridFSUploadOptions options = new GridFSUploadOptions();
+
+        ObjectId fileId = gridFSBucket.uploadFromStream(file.getOriginalFilename(), inputStream, options);
+        return fileId.toHexString(); // Return file ID to store in MongoDB
+    }
+
+    public InputStream getFile(String fileId) {
+        return gridFSBucket.openDownloadStream(new ObjectId(fileId));
     }
 }
+
