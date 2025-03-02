@@ -1,7 +1,7 @@
 import React from 'react';
 import CompanyNavbar from '../../components/CompanyNavbar';
 
-const CompanyBiddingForm = () => {
+const TenderPage = () => {
   return (
     <div>
         <CompanyNavbar />
@@ -9,4 +9,4 @@ const CompanyBiddingForm = () => {
   )
 }
 
-export default CompanyBiddingForm;
+export default TenderPage;
