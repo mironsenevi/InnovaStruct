@@ -18,11 +18,11 @@ const UserType = () => {
             </h1>
 
             {/* Cards Container */}
-            <div className="flex flex-wrap justify-center gap-12 w-full max-w-full">
+            <div className="flex flex-wrap justify-center gap-6 w-full max-w-full">
                 {/* Looking for services card */}
                 <button
                     onClick={() => handleUserType("client")}
-                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-6 w-full max-w-[300px] md:max-w-[400px] aspect-square cursor-pointer transition duration-300 ${
+                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-6 w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] aspect-square cursor-pointer transition duration-300 ${
                         userType === "client" ? "scale-105 bg-[#fd9d02]" : "hover:bg-[#fd9d02]"
                     }`}
                 >
@@ -32,14 +32,14 @@ const UserType = () => {
                     <img
                         src="/customer.png"
                         alt="Looking for services"
-                        className="w-3/4 max-w-[150px] md:max-w-[200px] mt-3 object-contain"
+                        className="w-3/4 max-w-[100px] sm:max-w-[120px] md:max-w-[150px] lg:max-w-[180px] xl:max-w-[200px] mt-3 object-contain"
                     />
                 </button>
 
                 {/* Service Provider card */}
                 <button
                     onClick={() => handleUserType("company")}
-                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-6 w-full max-w-[300px] md:max-w-[400px] aspect-square cursor-pointer transition duration-300 ${
+                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-6 w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] aspect-square cursor-pointer transition duration-300 ${
                         userType === "company" ? "scale-105 bg-[#fd9d02]" : "hover:bg-[#fd9d02]"
                     }`}
                 >
@@ -49,13 +49,13 @@ const UserType = () => {
                     <img
                         src="/customer-service.png"
                         alt="Service Provider"
-                        className="w-3/4 max-w-[150px] md:max-w-[200px] mt-3 object-contain"
+                        className="w-3/4 max-w-[100px] sm:max-w-[120px] md:max-w-[150px] lg:max-w-[180px] xl:max-w-[200px] mt-3 object-contain"
                     />
                 </button>
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex flex-wrap justify-between w-full px-4 gap-12 mt-20">
+            <div className="flex justify-between w-full px-4 gap-6 mt-20">
                 <button className="px-6 py-3 text-lg font-semibold rounded-3xl border-none bg-[#FCE6A4] text-black transition duration-300 hover:bg-[#fcb9a4]">
                     Go Back
                 </button>
