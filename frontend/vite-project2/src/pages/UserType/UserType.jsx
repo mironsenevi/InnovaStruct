@@ -8,7 +8,10 @@ const UserType = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-white p-5 font-[Montserrat]">
+        <div
+            className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center p-5 font-[Montserrat]"
+            style={{ backgroundImage: `url('/background.png')` }}
+        >
             {/* Main Heading */}
             <h1 className="text-2xl font-bold text-center mb-12">
                 How would you like to proceed?
