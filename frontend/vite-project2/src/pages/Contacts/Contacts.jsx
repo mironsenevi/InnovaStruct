@@ -1,55 +1,81 @@
 import { useState } from "react";
-import { Bell, Mail, User, X } from "lucide-react";
+import { Search, MoreVertical, CheckCheck, Send } from "lucide-react";
 
-const notifications = [
-  { id: 1, user: "Construction Team", message: "has started excavation work at the new site.", date: "March 1, 2024" },
-  { id: 2, user: "Site Manager", message: "reported a delay due to unexpected weather conditions.", date: "March 2, 2024" },
-  { id: 3, user: "Safety Officer", message: "reminded all workers to wear safety gear at all times.", date: "March 3, 2024" },
-  { id: 4, user: "Logistics Team", message: "confirmed the delivery of concrete materials for foundation work.", date: "March 4, 2024" },
+const chats = [
+  { name: "Client - John Doe", message: "Looking for a contractor to build my new house.", time: "02:01", unread: true },
+  { name: "Company - BuildIt Inc.", message: "We have an offer on premium construction materials.", time: "Yesterday" },
+  { name: "Client - Sarah Lee", message: "Need renovation advice for my kitchen.", time: "Yesterday" },
+  { name: "Company - ConstructPro", message: "Special discounts available this month.", time: "Monday" },
+  { name: "Client - Mark Spencer", message: "Requesting a quote for office remodeling.", time: "Monday" },
+  { name: "Company - Urban Builders", message: "Project updates for your commercial building.", time: "Monday" },
+  { name: "Client - Emma Watson", message: "Consultation request for interior design.", time: "Friday" },
 ];
 
-export default function Contact() {
-  const [selectedNotification, setSelectedNotification] = useState(null);
+export default function WhatsAppWebUI() {
+  const [selectedChat, setSelectedChat] = useState(chats[0]);
+  const [message, setMessage] = useState("");
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white text-black p-6">
-      <div className="bg-yellow-500 shadow-lg rounded-2xl p-8 max-w-2xl w-full">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-semibold">Notifications</h2>
-          <button className="text-black text-sm">Mark all read</button>
-        </div>
-        <div className="space-y-4">
-          {notifications.map((notification) => (
-            <div
-              key={notification.id}
-              className="flex items-center gap-4 p-4 border rounded-lg bg-white text-black cursor-pointer"
-              onClick={() => setSelectedNotification(notification)}
-            >
-              <User className="w-10 h-10 text-gray-700" />
-              <div className="flex-1">
-                <p className="font-medium">{notification.user} {notification.message}</p>
-                <p className="text-gray-500 text-sm">{notification.date}</p>
+    <div className="flex justify-center items-center min-h-screen bg-white">
+      <div className="w-[700px] h-[700px] bg-white shadow-lg flex">
+        {/* Sidebar */}
+        <div className="w-1/3 border-r flex flex-col bg-yellow-500">
+          <div className="flex items-center justify-between p-4 border-b">
+            <h2 className="text-xl font-semibold text-black">Chats</h2>
+            <Search className="w-5 h-5 text-black" />
+          </div>
+          <div className="flex-1 overflow-y-auto">
+            {chats.map((chat, index) => (
+              <div
+                key={index}
+                className={`p-3 border-b flex justify-between cursor-pointer hover:bg-yellow-400 bg-white ${
+                  selectedChat.name === chat.name ? "bg-yellow-300" : ""
+                }`}
+                onClick={() => setSelectedChat(chat)}
+              >
+                <div>
+                  <h3 className="font-semibold text-black">{chat.name}</h3>
+                  <p className="text-sm text-gray-600">{chat.message}</p>
+                </div>
+                <span className="text-sm text-gray-500">{chat.time}</span>
               </div>
-              <Bell className="w-5 h-5 text-red-500" />
-            </div>
-          ))}
-        </div>
-      </div>
-      {selectedNotification && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white text-black rounded-lg p-6 w-96 shadow-lg relative">
-            <button
-              className="absolute top-2 right-2 text-gray-600"
-              onClick={() => setSelectedNotification(null)}
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <h3 className="text-xl font-semibold mb-2">Message from {selectedNotification.user}</h3>
-            <p className="text-gray-700">{selectedNotification.message}</p>
-            <p className="text-gray-500 text-sm mt-2">{selectedNotification.date}</p>
+            ))}
           </div>
         </div>
-      )}
+
+        {/* Chat Window */}
+        <div className="w-2/3 flex flex-col">
+          <div className="flex items-center justify-between p-4 bg-yellow-500 border-b">
+            <h2 className="text-xl font-semibold text-black">{selectedChat.name}</h2>
+            <MoreVertical className="w-5 h-5 text-black" />
+          </div>
+          <div className="flex-1 flex flex-col justify-end p-4 bg-white">
+            <div className="flex flex-col">
+              <div className="bg-white p-2 rounded-lg self-end mb-2 max-w-xs shadow-md">
+                <p>{selectedChat.message}</p>
+                <span className="text-xs text-gray-600 flex justify-end">02:00 <CheckCheck className="w-4 h-4 text-gray-500 inline" /></span>
+              </div>
+              <div className="bg-gray-200 p-2 rounded-lg self-start mb-2 max-w-xs shadow-md">
+                <p>We would love to assist you with that!</p>
+                <span className="text-xs text-gray-600 flex justify-end">02:01</span>
+              </div>
+            </div>
+          </div>
+          {/* Typing Input */}
+          <div className="p-4 border-t flex items-center bg-white">
+            <input
+              type="text"
+              className="flex-1 p-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              placeholder="Type a message..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button className="ml-2 p-2 bg-yellow-500 rounded-lg text-white hover:bg-yellow-600">
+              <Send className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
