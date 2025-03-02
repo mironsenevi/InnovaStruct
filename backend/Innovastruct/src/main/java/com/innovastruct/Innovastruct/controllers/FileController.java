@@ -1,12 +1,17 @@
 package com.innovastruct.Innovastruct.controllers;
 
 
+
+
 import com.innovastruct.Innovastruct.services.FileStorageService ;
+import org.bson.types.ObjectId;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
-import java.util.Map;
+import java.io.InputStream;
 
 @RestController
 @RequestMapping("/api/files")
@@ -18,12 +23,21 @@ public class FileController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            String fileUrl = fileStorageService.storeFile(file);
-            return ResponseEntity.ok(Map.of("url", fileUrl));
+            String fileId = fileStorageService.storeFile(file);
+            return ResponseEntity.ok(fileId); // Return the file ID
         } catch (IOException e) {
-            return ResponseEntity.status(500).body(Map.of("error", "File upload failed"));
+            return ResponseEntity.status(500).body("File upload failed");
         }
     }
+
+    @GetMapping("/{fileId}")
+    public ResponseEntity<byte[]> getFile(@PathVariable String fileId) throws IOException {
+        InputStream fileStream = fileStorageService.getFile(fileId);
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(fileStream.readAllBytes());
+    }
 }
+
