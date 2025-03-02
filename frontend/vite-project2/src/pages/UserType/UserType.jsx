@@ -13,7 +13,7 @@ const UserType = () => {
             style={{ backgroundImage: `url('/background.png')` }}
         >
             {/* Main Heading */}
-            <h1 className="text-2xl font-bold text-center mb-12">
+            <h1 className="text-2xl md:text-4xl font-bold text-center mb-12">
                 How would you like to proceed?
             </h1>
 
@@ -22,34 +22,34 @@ const UserType = () => {
                 {/* Looking for services card */}
                 <button
                     onClick={() => handleUserType("client")}
-                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-4 w-full max-w-[200px] aspect-square cursor-pointer transition duration-300 ${
+                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-6 w-full max-w-[300px] md:max-w-[400px] aspect-square cursor-pointer transition duration-300 ${
                         userType === "client" ? "scale-105 bg-[#fd9d02]" : "hover:bg-[#fd9d02]"
                     }`}
                 >
-                    <h2 className="text-base md:text-lg font-semibold text-center leading-tight">
+                    <h2 className="text-lg md:text-xl font-semibold text-center leading-tight">
                         I am looking for services
                     </h2>
                     <img
                         src="/customer.png"
                         alt="Looking for services"
-                        className="w-3/4 max-w-[120px] mt-3 object-contain"
+                        className="w-3/4 max-w-[150px] md:max-w-[200px] mt-3 object-contain"
                     />
                 </button>
 
                 {/* Service Provider card */}
                 <button
                     onClick={() => handleUserType("company")}
-                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-4 w-full max-w-[200px] aspect-square cursor-pointer transition duration-300 ${
+                    className={`flex flex-col items-center justify-center bg-[#FDBE02] rounded-xl border-none p-6 w-full max-w-[300px] md:max-w-[400px] aspect-square cursor-pointer transition duration-300 ${
                         userType === "company" ? "scale-105 bg-[#fd9d02]" : "hover:bg-[#fd9d02]"
                     }`}
                 >
-                    <h2 className="text-base md:text-lg font-semibold text-center leading-tight">
+                    <h2 className="text-lg md:text-xl font-semibold text-center leading-tight">
                         I am a Service Provider
                     </h2>
                     <img
                         src="/customer-service.png"
                         alt="Service Provider"
-                        className="w-3/4 max-w-[120px] mt-3 object-contain"
+                        className="w-3/4 max-w-[150px] md:max-w-[200px] mt-3 object-contain"
                     />
                 </button>
             </div>
