@@ -12,7 +12,7 @@ export default function TenderList({ onSelectTender }) {
   return (
     <div className="flex min-h-screen">
       <CompanyNavbar />
-      <div className="flex-1 p-4 sm:p-8 transition-all duration-300">
+      <div className="flex-1 p-4 sm:p-8 transition-all duration-300 ml-0 sm:ml-64">
         <div className="max-w-7xl mx-auto">
           <div className="p-6 bg-white shadow-md rounded-lg">
             <h2 className="text-xl font-bold mb-4">Live Tenders</h2>
@@ -35,11 +35,6 @@ export default function TenderList({ onSelectTender }) {
                       <tr key={tender.id} className="border-b hover:bg-gray-50">
                         <td className="px-4 py-2">{tender.id}</td>
                         <td className="px-4 py-2 flex items-center space-x-2">
-                          <img
-                            src={tender.clientAvatar || "/default-avatar.png"}
-                            alt={tender.location}
-                            className="w-6 h-6 rounded-full"
-                          />
                           <span>{tender.location}</span>
                         </td>
                         <td className="px-4 py-2">
