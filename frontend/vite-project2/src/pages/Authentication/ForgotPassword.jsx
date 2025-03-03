@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function ForgotPassword() {
+  const [isLoading, setIsLoading] = React.useState(false);
+
   return (
     <div className="relative flex flex-col justify-center h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-yellow-400 lg:max-w-lg">
@@ -29,8 +31,8 @@ function ForgotPassword() {
             </select>
           </div>
           <div className="mt-6">
-            <button className="btn btn-neutral btn-block">
-              Send Reset Link
+            <button className="btn btn-neutral btn-block" disabled={isLoading}>
+              {isLoading ? 'Sending...' : 'Send Reset Link'}
             </button>
           </div>
           <div className="mt-4 text-center">
