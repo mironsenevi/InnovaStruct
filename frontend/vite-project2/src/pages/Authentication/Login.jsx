@@ -1,7 +1,7 @@
 // src/pages/Authentication/Login.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-
+//client and company login page
 function Login() {
   return (
     <div>
@@ -10,7 +10,8 @@ function Login() {
           <h1 className="text-3xl font-semibold text-center text-gray-700">
             Client Login
           </h1>
-          <div className="flex justify-center space-x-4 mt-4">
+          
+          <div className="flex justify-center space-x-4 mt-4"> 
             <Link to="/login" className="btn btn-sm btn-primary">Client Login</Link>
             <Link to="/company-login" className="btn btn-sm">Company Login</Link>
           </div>
@@ -47,7 +48,7 @@ function Login() {
           </form>
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
 
