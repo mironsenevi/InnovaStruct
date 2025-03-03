@@ -1,12 +1,12 @@
-package com.innovastruct.Innovastruct;
+package com.innovastruct.InnovaStruct;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InnovastructApplication {
+public class InnovaStructApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InnovastructApplication.class, args);
+		SpringApplication.run(InnovaStructApplication.class, args);
 	}
 }
