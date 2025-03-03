@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function ForgotPassword() {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
-  const [email, setEmail] = React.useState('');
-  const [error, setError] = React.useState('');
+  const [email, setEmail] = useState('');
+  const [accountType, setAccountType] = useState('client');
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     if (!email) {
       setError('Email is required');
       return;
     }
-    // Rest of the code...
+    setIsLoading(true);
+    try {
+      // Simulated API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setSuccess(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -22,33 +33,49 @@ function ForgotPassword() {
         <h1 className="text-3xl font-semibold text-center text-gray-700">
           Password Recovery
         </h1>
-        <form className="space-y-4 mt-4" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+          <div>
+            <label className="label">
+              <span className="text-base label-text">Account Type</span>
+            </label>
+            <select 
+              className="select select-bordered w-full"
+              value={accountType}
+              onChange={(e) => setAccountType(e.target.value)}
+            >
+              <option value="client">Client Account</option>
+              <option value="company">Company Account</option>
+            </select>
+          </div>
           <div>
             <label className="label">
               <span className="text-base label-text">Email Address</span>
             </label>
             <input
               type="email"
-              placeholder="Enter your email"
-              className="w-full input input-bordered"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="w-full input input-bordered"
             />
           </div>
-          <div className="mb-4">
-            <label className="label">
-              <span className="text-base label-text">Account Type</span>
-            </label>
-            <select className="select select-bordered w-full">
-              <option value="client">Client Account</option>
-              <option value="company">Company Account</option>
-            </select>
-          </div>
-          <div className="mt-6">
-            <button className="btn btn-neutral btn-block" disabled={isLoading}>
-              {isLoading ? 'Sending...' : 'Send Reset Link'}
-            </button>
-          </div>
+          {error && (
+            <div className="alert alert-error text-sm">
+              {error}
+            </div>
+          )}
+          <button 
+            type="submit" 
+            className="btn btn-neutral btn-block"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Sending...' : 'Send Reset Link'}
+          </button>
+          {success && (
+            <div className="alert alert-success">
+              Reset link sent! Please check your email.
+            </div>
+          )}
           <div className="mt-4 text-center">
             <Link 
               to="/login" 
@@ -58,16 +85,6 @@ function ForgotPassword() {
             </Link>
           </div>
         </form>
-        {success && (
-          <div className="alert alert-success mt-4">
-            Reset link sent! Please check your email.
-          </div>
-        )}
-        {error && (
-          <div className="alert alert-error mt-4">
-            {error}
-          </div>
-        )}
       </div>
     </div>
   );
