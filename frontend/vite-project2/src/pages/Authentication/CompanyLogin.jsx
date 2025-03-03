@@ -15,7 +15,7 @@ function CompanyLogin() {
                 <span className="text-base label-text">Company Email</span> 
               </label>
               <input
-                type="email"
+                type="email" //e mail address
                 placeholder="Company Email Address"
                 className="w-full input input-bordered"
               />

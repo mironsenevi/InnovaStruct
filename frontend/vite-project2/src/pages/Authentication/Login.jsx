@@ -1,7 +1,6 @@
-// src/pages/Authentication/Login.jsx
+// Login for clients 
 import React from "react";
 import { Link } from "react-router-dom";
-//client and company login page
 function Login() {
   return (
     <div>
@@ -32,7 +31,7 @@ function Login() {
               </label>
               <input
                 type="password"
-                placeholder="Enter Password" //pasword 
+                placeholder="Enter Password" 
                 className="w-full input input-bordered"
               />
             </div>
@@ -48,7 +47,7 @@ function Login() {
           </form>
         </div>
       </div>
-    </div>// added forget pasword links 
+    </div>
   );
 }
 
