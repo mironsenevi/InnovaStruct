@@ -1,3 +1,5 @@
+//
+
 import React, { useState } from "react";
 import ClientNavbar from "../../components/ClientNavbar";
 import { Upload, MapPin, FileText, Calendar, Users, Clock, Building } from 'lucide-react';
@@ -45,7 +47,7 @@ export default function CreateTender() {
             <p className="text-gray-600 mt-2">Create a new tender for your project</p>
           </div>
 
-          {/* Main Form */}
+          {/* main Form */}
           <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-6">
             {/* Project Details Section */}
             <div className="space-y-6">
