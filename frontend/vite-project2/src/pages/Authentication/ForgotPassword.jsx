@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 function ForgotPassword() {
   const [isLoading, setIsLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
 
   return (
     <div className="relative flex flex-col justify-center h-screen overflow-hidden">
@@ -44,6 +45,11 @@ function ForgotPassword() {
             </Link>
           </div>
         </form>
+        {success && (
+          <div className="alert alert-success mt-4">
+            Reset link sent! Please check your email.
+          </div>
+        )}
       </div>
     </div>
   );
