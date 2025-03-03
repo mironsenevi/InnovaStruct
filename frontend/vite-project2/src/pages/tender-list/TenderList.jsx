@@ -6,14 +6,13 @@ export default function TenderList({ onSelectTender }) {
   const [tenders, setTenders] = useState([]);
 
   useEffect(() => {
-    // Use mock data instead of fetching from an API
     setTenders(mockTenders);
   }, []);
 
   return (
     <div className="flex min-h-screen">
       <CompanyNavbar />
-      <div className="flex-1 p-4 sm:p-8 transition-all duration-300 ml-0 sm:ml-64">
+      <div className="flex-1 p-4 sm:p-8 transition-all duration-300">
         <div className="max-w-7xl mx-auto">
           <div className="p-6 bg-white shadow-md rounded-lg">
             <h2 className="text-xl font-bold mb-4">Live Tenders</h2>
@@ -35,7 +34,14 @@ export default function TenderList({ onSelectTender }) {
                     {tenders.map((tender) => (
                       <tr key={tender.id} className="border-b hover:bg-gray-50">
                         <td className="px-4 py-2">{tender.id}</td>
-                        <td className="px-4 py-2">{tender.location}</td>
+                        <td className="px-4 py-2 flex items-center space-x-2">
+                          <img
+                            src={tender.clientAvatar || "/default-avatar.png"}
+                            alt={tender.location}
+                            className="w-6 h-6 rounded-full"
+                          />
+                          <span>{tender.location}</span>
+                        </td>
                         <td className="px-4 py-2">
                           <span className={`px-2 py-1 text-xs rounded ${tender.status === "Open" ? "bg-green-200 text-green-700" : "bg-red-200 text-red-700"}`}>
                             {tender.status}
