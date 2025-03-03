@@ -4,6 +4,17 @@ import { Link } from 'react-router-dom';
 function ForgotPassword() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
+  const [email, setEmail] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email) {
+      setError('Email is required');
+      return;
+    }
+    // Rest of the code...
+  };
 
   return (
     <div className="relative flex flex-col justify-center h-screen overflow-hidden">
@@ -11,7 +22,7 @@ function ForgotPassword() {
         <h1 className="text-3xl font-semibold text-center text-gray-700">
           Password Recovery
         </h1>
-        <form className="space-y-4 mt-4">
+        <form className="space-y-4 mt-4" onSubmit={handleSubmit}>
           <div>
             <label className="label">
               <span className="text-base label-text">Email Address</span>
@@ -20,6 +31,8 @@ function ForgotPassword() {
               type="email"
               placeholder="Enter your email"
               className="w-full input input-bordered"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -48,6 +61,11 @@ function ForgotPassword() {
         {success && (
           <div className="alert alert-success mt-4">
             Reset link sent! Please check your email.
+          </div>
+        )}
+        {error && (
+          <div className="alert alert-error mt-4">
+            {error}
           </div>
         )}
       </div>
