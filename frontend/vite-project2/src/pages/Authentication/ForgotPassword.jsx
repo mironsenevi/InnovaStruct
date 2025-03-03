@@ -27,6 +27,11 @@ function ForgotPassword() {
               <option value="company">Company Account</option>
             </select>
           </div>
+          <div className="mt-6">
+            <button className="btn btn-neutral btn-block">
+              Send Reset Link
+            </button>
+          </div>
         </form>
       </div>
     </div>
