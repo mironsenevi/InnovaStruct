@@ -42,13 +42,13 @@ function Login() {
             >
               Forget Password?
             </a>
-            <div>
-              <button className="btn-neutral btn btn-block">Login</button>
+            <div> 
+              <button className="btn-neutral btn btn-block">Login</button> 
             </div>
           </form>
         </div>
       </div>
-    </div> 
+    </div>// added a button 
   );
 }
 
