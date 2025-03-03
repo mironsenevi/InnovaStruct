@@ -1,4 +1,4 @@
-package com.innovastruct.InnovaStruct;
+package com.innovastruct.Innovastruct;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

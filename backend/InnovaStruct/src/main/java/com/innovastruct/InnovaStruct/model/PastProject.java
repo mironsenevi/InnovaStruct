@@ -1,4 +1,4 @@
-package com.innovastruct.InnovaStruct.model;
+package com.innovastruct.Innovastruct.model;
 
 import lombok.*;
 

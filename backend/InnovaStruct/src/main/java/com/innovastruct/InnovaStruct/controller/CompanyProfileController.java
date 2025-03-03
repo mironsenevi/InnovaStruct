@@ -1,7 +1,7 @@
-package com.innovastruct.InnovaStruct.controller;
+package com.innovastruct.Innovastruct.controller;
 
-import com.innovastruct.InnovaStruct.model.CompanyProfile;
-import com.innovastruct.InnovaStruct.service.CompanyProfileService;
+import com.innovastruct.Innovastruct.model.CompanyProfile;
+import com.innovastruct.Innovastruct.service.CompanyProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

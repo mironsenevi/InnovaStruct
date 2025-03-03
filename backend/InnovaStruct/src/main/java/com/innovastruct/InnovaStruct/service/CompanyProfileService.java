@@ -1,7 +1,7 @@
-package com.innovastruct.InnovaStruct.service;
+package com.innovastruct.Innovastruct.service;
 
-import com.innovastruct.InnovaStruct.model.CompanyProfile;
-import com.innovastruct.InnovaStruct.repository.CompanyProfileRepository;
+import com.innovastruct.Innovastruct.model.CompanyProfile;
+import com.innovastruct.Innovastruct.repository.CompanyProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

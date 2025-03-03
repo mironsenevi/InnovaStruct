@@ -1,6 +1,6 @@
-package com.innovastruct.InnovaStruct.repository;
+package com.innovastruct.Innovastruct.repository;
 
-import com.innovastruct.InnovaStruct.model.CompanyProfile;
+import com.innovastruct.Innovastruct.model.CompanyProfile;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
