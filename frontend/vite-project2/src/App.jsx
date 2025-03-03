@@ -6,7 +6,11 @@ import CompanyHome from "./pages/company-dashboard/CompanyHome";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import RegisteredCompaniesPage from './pages/companies/RegisteredCompaniesPage';
 import CompanyProfilePage from './pages/companies/CompanyProfilePage';
-import SettingsPage from './pages/Settings/SettingsPage';
+import SettingsPageClient from './pages/Settings/SettingsPageClient';
+import SettingsPageCompany from './pages/Settings/SettingsPageCompany';
+import ConstructionBiddingInterface from "./pages/client-dashboard/ConstructionBiddingInterface";
+import CompanyPortfolio from "./pages/company-dashboard/CompanyPortfolio";
+import Contacts from "./pages/Contacts/Contacts";
 
 const App = () => {
   return (
@@ -21,7 +25,11 @@ const App = () => {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/companies" element={<RegisteredCompaniesPage />} />
           <Route path="/companies/:id" element={<CompanyProfilePage />} />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/client/settings" element={<SettingsPageClient />} />
+          <Route path="/company/settings" element={<SettingsPageCompany />} />
+          <Route path="/client/tender" element={<ConstructionBiddingInterface />} />
+          <Route path="/company/portfolio" element={<CompanyPortfolio />} />
+          <Route path="/company/contacts" element={<Contacts />} />
           {/* Add a catch-all route for 404 pages */}
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
