@@ -1,4 +1,4 @@
-// src/pages/Authentication/CompanyLogin.jsx
+//company login form
 import React from "react";
 
 function CompanyLogin() {
