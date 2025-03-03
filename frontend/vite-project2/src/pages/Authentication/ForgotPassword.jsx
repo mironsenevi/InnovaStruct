@@ -18,6 +18,15 @@ function ForgotPassword() {
               className="w-full input input-bordered"
             />
           </div>
+          <div className="mb-4">
+            <label className="label">
+              <span className="text-base label-text">Account Type</span>
+            </label>
+            <select className="select select-bordered w-full">
+              <option value="client">Client Account</option>
+              <option value="company">Company Account</option>
+            </select>
+          </div>
         </form>
       </div>
     </div>
