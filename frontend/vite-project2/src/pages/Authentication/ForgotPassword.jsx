@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ForgotPassword() {
   return (
@@ -31,6 +32,14 @@ function ForgotPassword() {
             <button className="btn btn-neutral btn-block">
               Send Reset Link
             </button>
+          </div>
+          <div className="mt-4 text-center">
+            <Link 
+              to="/login" 
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Back to Login
+            </Link>
           </div>
         </form>
       </div>
