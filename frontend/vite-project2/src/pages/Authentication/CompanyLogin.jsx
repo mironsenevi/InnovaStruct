@@ -12,7 +12,7 @@ function CompanyLogin() {
           <form className="space-y-4">
             <div>
               <label className="label">
-                <span className="text-base label-text">Company Email</span>
+                <span className="text-base label-text">Company Email</span> 
               </label>
               <input
                 type="email"
@@ -22,7 +22,7 @@ function CompanyLogin() {
             </div>
             <div>
               <label className="label">
-                <span className="text-base label-text">Password</span>
+                <span className="text-base label-text">Password</span> 
               </label>
               <input
                 type="password"

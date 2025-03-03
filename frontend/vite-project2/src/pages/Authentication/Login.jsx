@@ -32,7 +32,7 @@ function Login() {
               </label>
               <input
                 type="password"
-                placeholder="Enter Password"
+                placeholder="Enter Password" //pasword 
                 className="w-full input input-bordered"
               />
             </div>
@@ -40,15 +40,15 @@ function Login() {
               href="#"
               className="text-xs text-gray-600 hover:underline hover:text-blue-600"
             >
-              Forget Password?
-            </a>
+              Forget Password? 
+            </a> 
             <div> 
               <button className="btn-neutral btn btn-block">Login</button> 
             </div>
           </form>
         </div>
       </div>
-    </div>// added a button 
+    </div>// added forget pasword links 
   );
 }
 
