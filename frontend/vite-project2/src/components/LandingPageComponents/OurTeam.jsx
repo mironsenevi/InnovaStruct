@@ -186,7 +186,7 @@ const OurTeam = () => {
             <a href="#">
               <img
                 className="w-full h-full max-h-80 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                src="../assets/dinaya.jpg"
+                src="../assets/Dinaya.jpg"
                 alt="Dinaya image"
                 // style={{ maxHeight: "30" }} // Adjust minimum height as needed
               />

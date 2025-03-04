@@ -54,7 +54,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  Basic Features
+                  Company Portfolio (Limited to 3 Projects)
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -71,7 +71,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  24/7 Support
+                  Bidding System (Limited to 5 Bids/Month)
                 </li>
               </ul>
             </div>
@@ -112,7 +112,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  Max 200 Users
+                  Max 100 Users
                 </li>
                 <li className="mb-2 flex items-center">
                   <svg
@@ -129,7 +129,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  Advanced Features
+                  Unlimited Portfolio Entries with Custom Branding
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -146,7 +146,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  24/7 Support
+                  Unlimited Bidding Access
                 </li>
               </ul>
             </div>
@@ -201,7 +201,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  Premium Features
+                  AI-Generated Blueprint Optimization
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -218,7 +218,7 @@ const PricingCards = () => {
                       d="M5 13l4 4L19 7"
                     ></path>
                   </svg>
-                  24/7 Priority Support
+                  Advanced Project Tracking & Task Automation
                 </li>
               </ul>
             </div>
