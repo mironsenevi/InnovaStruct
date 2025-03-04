@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/client-dashboard/Home";
 import Login from "./pages/Authentication/Login";
@@ -18,21 +17,26 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route path="/company/home" element={<CompanyHome/>}/>
-          {/* Redirect root path to login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/client/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/companies" element={<RegisteredCompaniesPage />} />
-          <Route path="/companies/:id" element={<CompanyProfilePage />} />
-          <Route path="/client/settings" element={<SettingsPageClient />} />
-          <Route path="/company/settings" element={<SettingsPageCompany />} />
-          <Route path="/client/tender" element={<ConstructionBiddingInterface />} />
-          <Route path="/company/portfolio" element={<CompanyPortfolio />} />
-          <Route path="/company/contacts" element={<ContactsCompany />} />
-          <Route path="/client/contacts" element={<ContactsClient />} />
-          {/* Add a catch-all route for 404 pages */}
+
+          <Route path="/client">
+            <Route path="home" element={<Home />} />
+            <Route path="companies" element={<RegisteredCompaniesPage />} />
+            <Route path="companies/:id" element={<CompanyProfilePage />} />
+            <Route path="settings" element={<SettingsPageClient />} />
+            <Route path="tender" element={<ConstructionBiddingInterface />} />
+            <Route path="contacts" element={<ContactsClient />} />
+          </Route>
+
+          <Route path="/company">
+            <Route path="home" element={<CompanyHome />} />
+            <Route path="portfolio" element={<CompanyPortfolio />} />
+            <Route path="settings" element={<SettingsPageCompany />} />
+            
+            <Route path="contacts" element={<ContactsCompany />} />
+          </Route>
+
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </Router>
