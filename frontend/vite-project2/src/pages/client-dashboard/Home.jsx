@@ -72,7 +72,7 @@ const Home = () => {
       title: 'Consultations',
       icon: <Users size={40} />,
       description: 'Chat with home design experts for personalized advice.',
-      link: '/client/contacts',
+      link: '/client/contacts', // This correctly points to the contacts page
       color: 'bg-amber-400',
       count: 5
     },
