@@ -1,15 +1,21 @@
+// language: jsx
 import React, { useState } from "react";
 import ClientNavbar from "../../components/ClientNavbar";
 import { Upload, MapPin, FileText, Calendar, Users, Clock, Building } from 'lucide-react';
 
 export default function CreateTender() {
   const [tender, setTender] = useState({
+    // _id will be created by the backend.
+    clientId: "", // Set this from your authenticated client data as needed.
     title: "",
     description: "",
     plan: "",
     boq: "",
-    budget: "",
+    budget: "", // We'll convert this to a number on submit.
     deadline: "",
+    // status defaults to 'open'
+    status: "open",
+    // createdAt will be added on submit.
   });
 
   const handleChange = (e) => {
@@ -18,15 +24,29 @@ export default function CreateTender() {
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
+    // Assuming you plan to select one file per field, you might need to adjust this logic.
     setTender({ ...tender, [e.target.name]: selectedFiles });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Prepare the data for submission according to the required data model.
+    const submissionData = {
+      clientId: tender.clientId, // supply client id as needed
+      title: tender.title,
+      description: tender.description,
+      plan: tender.plan, // or process file references if needed
+      boq: tender.boq,   // or process file references if needed
+      budget: Number(tender.budget),
+      deadline: tender.deadline, // should be in ISODate string format, can adjust if necessary
+      status: tender.status,
+      createdAt: new Date().toISOString(),
+    };
+
     const response = await fetch("/api/tenders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(tender),
+      body: JSON.stringify(submissionData),
     });
     if (response.ok) alert("Tender Created Successfully!");
   };
