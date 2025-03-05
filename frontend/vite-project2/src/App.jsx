@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import Home from "./pages/client-dashboard/Home";
 import Login from "./pages/Authentication/Login";
 import CompanyHome from "./pages/company-dashboard/CompanyHome";
-import Portfolio from "./pages/Portfolio/Portfolio";
+import ClientInsights from "./pages/insights/ClientInsights";
+import CompanyInsights from "./pages/insights/CompanyInsights";
 import RegisteredCompaniesPage from './pages/companies/RegisteredCompaniesPage';
 import CompanyProfilePage from './pages/companies/CompanyProfilePage';
 import SettingsPageClient from './pages/Settings/SettingsPageClient';
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="companies/:id" element={<CompanyProfilePage />} />
             <Route path="settings" element={<SettingsPageClient />} />
             <Route path="tender" element={<ConstructionBiddingInterface />} />
+            <Route path="insights" element={<ClientInsights />} />
             <Route path="contacts" element={<ContactsClient />} />
           </Route>
 
@@ -33,7 +35,7 @@ const App = () => {
             <Route path="home" element={<CompanyHome />} />
             <Route path="portfolio" element={<CompanyPortfolio />} />
             <Route path="settings" element={<SettingsPageCompany />} />
-            
+            <Route path="insights" element={<CompanyInsights />} />
             <Route path="contacts" element={<ContactsCompany />} />
           </Route>
 

@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import {
   Home,
   Building,
-  Users,
+  
   FileText,
   Settings,
   LogOut,
   ChevronLeft,
   ChevronRight,
   Briefcase,
+  LineChart,
 } from "lucide-react";
 
 // Helper component for nav items with PropTypes
@@ -96,8 +97,8 @@ function CompanyNavbar() {
       <ul className="flex flex-col p-4 space-y-4 flex-grow">
         <NavItem href="/company/home" icon={<Home />} text="Home" isMinimized={isMinimized} />
         <NavItem href="/company/portfolio" icon={<Building />} text="Portfolio" isMinimized={isMinimized} />
-        <NavItem href="/company/contacts" icon={<Users />} text="Contacts" isMinimized={isMinimized} />
         <NavItem href="/company/tender" icon={<FileText />} text="Tender" isMinimized={isMinimized} />
+        <NavItem href="/company/insights" icon={<LineChart />} text="Insights" isMinimized={isMinimized} />
         <NavItem href="/company/settings" icon={<Settings />} text="Settings" isMinimized={isMinimized} />
       </ul>
 
