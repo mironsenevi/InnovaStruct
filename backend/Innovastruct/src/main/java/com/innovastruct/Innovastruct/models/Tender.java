@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import java.util.Date;
 import java.util.List;
 
+
 public class Tender {
     @Id
     private String id;
@@ -12,23 +13,15 @@ public class Tender {
     private String title;
     private String description;
     private String location;
-    private String budgetRange;
+    private String plan;
+    private String boq;
+    private double budget;
     private Date deadline;
+    private String status = "open";
+    private Date createdAt = new Date();
     private List<String> projectDocuments;
 
 
-
-    public Tender(String id, String clientId, String title, String description, String location, String budgetRange, List<String> projectDocuments) {
-        this.id = id;
-        this.clientId = clientId;
-        this.title = title;
-        this.description = description;
-        this.location = location;
-        this.budgetRange = budgetRange;
-        this.projectDocuments = projectDocuments;
-    }
-
-    // Getters and Setters
     public String getId() {
         return id;
     }
@@ -69,12 +62,52 @@ public class Tender {
         this.location = location;
     }
 
-    public String getBudgetRange() {
-        return budgetRange;
+    public String getPlan() {
+        return plan;
     }
 
-    public void setBudgetRange(String budgetRange) {
-        this.budgetRange = budgetRange;
+    public void setPlan(String plan) {
+        this.plan = plan;
+    }
+
+    public String getBoq() {
+        return boq;
+    }
+
+    public void setBoq(String boq) {
+        this.boq = boq;
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(double budget) {
+        this.budget = budget;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     public List<String> getProjectDocuments() {
