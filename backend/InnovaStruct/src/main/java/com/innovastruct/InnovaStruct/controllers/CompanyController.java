@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/companies")
-@CrossOrigin(origins = "http://localhost:3000") // Adjust origin as needed
+@RequestMapping("/company/portfolio")
+@CrossOrigin(origins = "http://localhost:5173") // Adjust origin as needed
 public class CompanyController {
 
     @Autowired

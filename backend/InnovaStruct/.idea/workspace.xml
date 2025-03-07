@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed5ae647-64d4-47a3-aa66-c060f74a8bc0" name="Changes" comment="" />
+    <list default="true" id="ed5ae647-64d4-47a3-aa66-c060f74a8bc0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovastruct/InnovaStruct/controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovastruct/InnovaStruct/controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovastruct/InnovaStruct/models/ContactInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovastruct/InnovaStruct/models/ContactInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/innovastruct/Innovastruct/controllers/CompanyProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/innovastruct/Innovastruct/models/CompanyProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/innovastruct/Innovastruct/models/PastProject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/innovastruct/Innovastruct/repositories/CompanyProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/innovastruct/Innovastruct/services/CompanyProfileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/innovastruct/Innovastruct/InnovaStructApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/innovastruct/Innovastruct/InnovaStructApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite-project2/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite-project2/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite-project2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite-project2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite-project2/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite-project2/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite-project2/src/components/CompanyProfile/CompanyProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite-project2/src/components/CompanyProfile/CompanyProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite-project2/src/pages/Portfolio/Portfolio.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite-project2/src/pages/Portfolio/Portfolio.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/vite-project2/src/pages/company-dashboard/CreatePortfolioForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/vite-project2/src/pages/company-dashboard/CreatePortfolioForm.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,32 +56,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.InnovaStructApplication.executor": "Run",
-    "Spring Boot.InnovastructApplication.executor": "Debug",
-    "git-widget-placeholder": "Portfolio-backend",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/IIT/2nd year/SDGP/cw2/InnovaStruct/backend/Innovastruct",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.InnovaStructApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.InnovastructApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;portfolio&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IIT/2nd year/SDGP/cw2/InnovaStruct/backend/Innovastruct&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="InnovaStructApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="Innovastruct" />
+      <module name="InnovaStruct" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.innovastruct.InnovaStruct.InnovaStructApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,6 +124,10 @@
       <workItem from="1740932691621" duration="208000" />
       <workItem from="1740932921049" duration="1968000" />
       <workItem from="1740984178708" duration="7682000" />
+      <workItem from="1741174258570" duration="3578000" />
+      <workItem from="1741178154932" duration="5259000" />
+      <workItem from="1741266376647" duration="2890000" />
+      <workItem from="1741325974518" duration="1856000" />
     </task>
     <servers />
   </component>
