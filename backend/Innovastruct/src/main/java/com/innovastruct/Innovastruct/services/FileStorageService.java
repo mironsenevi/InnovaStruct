@@ -1,7 +1,5 @@
 package com.innovastruct.Innovastruct.services;
 
-
-
 import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.model.GridFSUploadOptions;
 import org.bson.types.ObjectId;
@@ -20,15 +18,16 @@ public class FileStorageService {
     }
 
     public String storeFile(MultipartFile file) throws IOException {
-        InputStream inputStream = file.getInputStream();
+        ObjectId fileId = new ObjectId();
         GridFSUploadOptions options = new GridFSUploadOptions();
 
-        ObjectId fileId = gridFSBucket.uploadFromStream(file.getOriginalFilename(), inputStream, options);
-        return fileId.toHexString(); // Return file ID to store in MongoDB
+        try (InputStream inputStream = file.getInputStream()) {
+            ObjectId fieldId = gridFSBucket.uploadFromStream(file.getOriginalFilename(), inputStream, options);
+            return fieldId.toHexString();
+        }
     }
 
-    public InputStream getFile(String fileId) {
-        return gridFSBucket.openDownloadStream(new ObjectId(fileId));
+    public InputStream getFile(String field) {
+        return gridFSBucket.openDownloadStream(new ObjectId(field));
     }
 }
-

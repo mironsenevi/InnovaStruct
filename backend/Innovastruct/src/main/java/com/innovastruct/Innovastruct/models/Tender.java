@@ -1,4 +1,4 @@
-package com.innovastruct.InnovaStruct.models;
+package com.innovastruct.Innovastruct.models;
 
 import org.springframework.data.annotation.Id;
 
