@@ -20,7 +20,7 @@ function ForgotPassword() {
       // Simulated API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       setSuccess(true);
-    } catch (err) {
+    } catch (error) {
       setError('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
