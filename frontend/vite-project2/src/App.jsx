@@ -13,11 +13,17 @@ import RegisteredCompaniesPage from "./pages/companies/RegisteredCompaniesPage";
 import CompanyProfilePage from "./pages/companies/CompanyProfilePage";
 import SettingsPageClient from "./pages/Settings/SettingsPageClient";
 import SettingsPageCompany from "./pages/Settings/SettingsPageCompany";
-import ConstructionBiddingInterface from "./pages/client-dashboard/ConstructionBiddingInterface";
+import CompanyTenderDashboard from "./pages/CompanyTender/CompanyTenderDashboard.jsx";
+
 import CompanyPortfolio from "./pages/company-dashboard/CompanyPortfolio";
 import ContactsCompany from "./pages/Contacts/ContactsCompany";
 import ContactsClient from "./pages/Contacts/ContactsClient";
 import CompanyProfileEdit from "./pages/company-dashboard/CompanyProfileEdit";
+import CreateTender from "./pages/ClientTender/CreateTender.jsx";
+import ClientTender from "./pages/ClientTender/ClientTender.jsx";
+import TenderHeatmap from "./pages/CompanyTender/TenderHeatmap.jsx";
+import ActiveBids from "./pages/CompanyTender/ActiveBids.jsx";
+import TenderAnalytics from "./pages/CompanyTender/TenderAnalytics.jsx";
 
 const App = () => {
   return (
@@ -32,9 +38,11 @@ const App = () => {
             <Route path="companies" element={<RegisteredCompaniesPage />} />
             <Route path="companies/:id" element={<CompanyProfilePage />} />
             <Route path="settings" element={<SettingsPageClient />} />
-            <Route path="tender" element={<ConstructionBiddingInterface />} />
+            <Route path="tender" element={<ClientTender />} />
+            <Route path="tender/create" element={<CreateTender />} />
             <Route path="insights" element={<ClientInsights />} />
             <Route path="contacts" element={<ContactsClient />} />
+           
           </Route>
 
           <Route path="/company">
@@ -44,6 +52,10 @@ const App = () => {
             <Route path="insights" element={<CompanyInsights />} />
             <Route path="contacts" element={<ContactsCompany />} />
             <Route path="profile/:id" element={<CompanyProfileEdit />} />
+            <Route path="tender" element={<CompanyTenderDashboard />} />
+            <Route path="tender/heatmap" element={<TenderHeatmap />} />
+          <Route path="tender/bids" element={<ActiveBids />} />
+          <Route path="tender/analytics" element={<TenderAnalytics />} />
           </Route>
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>

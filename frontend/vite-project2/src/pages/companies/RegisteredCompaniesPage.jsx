@@ -185,7 +185,7 @@ const RegisteredCompaniesPage = () => {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {filteredCompanies.map((company) => (
-                <Link to={`/companies/${company.id}`} key={company.id} className="block h-full">
+                <Link to={`/client/companies/${company.id}`} key={company.id} className="block h-full">
                   <div className="card bg-base-100 shadow-xl h-full hover:shadow-2xl transition-shadow">
                     <figure className="h-48 w-full">
                       <img 
