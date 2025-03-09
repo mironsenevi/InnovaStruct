@@ -5,6 +5,13 @@ import Login from "./pages/Authentication/Login";
 import CreateTender from "./pages/create-tender/CreateTender";
 import TenderList from "./pages/tender-list/TenderList";
 import ClientTender from "./pages/tender-client/ClientTender";
+import './index.css'
+
+
+import CompanyTenderDashboard from "./pages/CompanyTender/CompanyTenderDashboard.jsx";
+import TenderHeatmap from "./pages/CompanyTender/TenderHeatmap.jsx";
+import ActiveBids from "./pages/CompanyTender/ActiveBids.jsx";
+import TenderAnalytics from "./pages/CompanyTender/TenderAnalytics.jsx";
 
 const App = () => {
   return (
@@ -17,6 +24,11 @@ const App = () => {
           <Route path="/tender/create" element={<CreateTender />} />
           <Route path="/tender/tenderlist" element={<TenderList />} />
 
+          <Route path="/company/tender" element={<CompanyTenderDashboard />} />
+          <Route path="/company/tender/heatmap" element={<TenderHeatmap />} />
+          <Route path="/company/tender/bids" element={<ActiveBids />} />
+          <Route path="/company/tender/analytics" element={<TenderAnalytics />} />
+          
           
         </Routes>
       </Router>
