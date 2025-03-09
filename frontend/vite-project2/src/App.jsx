@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/client-dashboard/Home";
 import Login from "./pages/Authentication/Login";
-import CreateTender from "./pages/create-tender/CreateTender";
-import TenderList from "./pages/tender-list/TenderList";
-import ClientTender from "./pages/tender-client/ClientTender";
+import CreateTender from "./pages/ClientTender/CreateTender.jsx";
+import TenderList from "./pages/ClientTender/TenderList.jsx";
+import ClientTender from "./pages/ClientTender/ClientTender.jsx";
 import './index.css'
 
 
