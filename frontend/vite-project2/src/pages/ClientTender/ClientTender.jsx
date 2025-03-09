@@ -1,52 +1,131 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ClientNavbar from '../../components/ClientNavbar';
 import { 
   PlusCircle, FileText, Clock, Users, TrendingDown, CheckCircle, AlertCircle,
   Sparkles, TrendingUp, Calendar, ChevronRight, Eye, X, Loader2
 } from 'lucide-react';
-import { mockTenders } from '../../data/mockData';
+
 
 const ClientTender = () => {
   // In a real app, this would come from an API call
   const [userTenders, setUserTenders] = useState([
     {
-      id: 1,
-      title: "New Office Building",
-      description: "Construction of a new office building in downtown.",
-      budget: 500000,
-      deadline: "2025-12-31",
-      status: "active",
-      bidsCount: 5,
-      lowestBid: 480000,
-      createdAt: "2023-10-15",
+      "id": 1,
+      "title": "Family Home Construction",
+      "description": "Building a new family home with a modern design.",
+      "budget": 300000,
+      "deadline": "2025-09-30",
+      "status": "active",
+      "bidsCount": 4,
+      "lowestBid": 290000,
+      "createdAt": "2024-02-10"
     },
     {
-      id: 2,
-      title: "Renovation Project",
-      description: "Renovation of the old city hall.",
-      budget: 200000,
-      deadline: "2024-06-30",
-      status: "ended",
-      bidsCount: 8,
-      lowestBid: 185000,
-      createdAt: "2023-09-01",
+      "id": 2,
+      "title": "Apartment Renovation",
+      "description": "Full renovation of a two-bedroom apartment.",
+      "budget": 100000,
+      "deadline": "2024-08-15",
+      "status": "new",
+      "bidsCount": 2,
+      "lowestBid": 95000,
+      "createdAt": "2024-03-05"
     },
     {
-      id: 3,
-      title: "Hospital Wing Extension",
-      description: "Building a new wing for the city hospital.",
-      budget: 750000,
-      deadline: "2025-03-15",
-      status: "new",
-      bidsCount: 0,
-      lowestBid: null,
-      createdAt: "2023-11-05",
+      "id": 3,
+      "title": "Backyard Landscape Upgrade",
+      "description": "Redesigning the backyard with a patio and garden.",
+      "budget": 50000,
+      "deadline": "2024-07-01",
+      "status": "active",
+      "bidsCount": 3,
+      "lowestBid": 47000,
+      "createdAt": "2024-01-20"
     },
-  ]);
+    {
+      "id": 4,
+      "title": "Home Office Setup",
+      "description": "Building a dedicated home office with custom furniture.",
+      "budget": 25000,
+      "deadline": "2024-12-10",
+      "status": "new",
+      "bidsCount": 1,
+      "lowestBid": 23000,
+      "createdAt": "2024-04-01"
+    },
+    {
+      "id": 5,
+      "title": "Garage Conversion",
+      "description": "Converting the garage into a guest room.",
+      "budget": 40000,
+      "deadline": "2024-10-05",
+      "status": "active",
+      "bidsCount": 5,
+      "lowestBid": 38000,
+      "createdAt": "2024-02-15"
+    },
+    {
+      "id": 6,
+      "title": "Kitchen Remodel",
+      "description": "Upgrading the kitchen with new cabinets and appliances.",
+      "budget": 60000,
+      "deadline": "2024-09-20",
+      "status": "ended",
+      "bidsCount": 6,
+      "lowestBid": 57000,
+      "createdAt": "2024-01-10"
+    },
+    {
+      "id": 7,
+      "title": "Basement Finishing",
+      "description": "Transforming the basement into a home theater and lounge.",
+      "budget": 80000,
+      "deadline": "2025-02-28",
+      "status": "new",
+      "bidsCount": 0,
+      "lowestBid": null,
+      "createdAt": "2024-03-25"
+    },
+    {
+      "id": 8,
+      "title": "Bathroom Upgrade",
+      "description": "Modernizing the master bathroom with a new layout.",
+      "budget": 30000,
+      "deadline": "2024-11-15",
+      "status": "active",
+      "bidsCount": 3,
+      "lowestBid": 28000,
+      "createdAt": "2024-02-28"
+    },
+    {
+      "id": 9,
+      "title": "Guest House Construction",
+      "description": "Building a small guest house in the backyard.",
+      "budget": 120000,
+      "deadline": "2025-06-30",
+      "status": "new",
+      "bidsCount": 2,
+      "lowestBid": 115000,
+      "createdAt": "2024-04-10"
+    },
+    {
+      "id": 10,
+      "title": "Roof Replacement",
+      "description": "Replacing the old roof with durable materials.",
+      "budget": 50000,
+      "deadline": "2024-08-31",
+      "status": "ended",
+      "bidsCount": 7,
+      "lowestBid": 48000,
+      "createdAt": "2024-01-05"
+    }
+]
+);
 
   const [selectedTender, setSelectedTender] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  
 
   const handleViewDetails = (tender) => {
     setSelectedTender(tender);
@@ -206,20 +285,7 @@ const ClientTender = () => {
                 <h2 className="text-xl font-bold text-gray-800">Recent Tenders</h2>
               </div>
               
-              <div className="flex gap-2">
-                <button className="px-3 py-1.5 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 
-                  transition-colors duration-200 font-medium">
-                  All
-                </button>
-                <button className="px-3 py-1.5 text-sm bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 
-                  transition-colors duration-200 font-medium shadow-md shadow-yellow-100">
-                  Active
-                </button>
-                <button className="px-3 py-1.5 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 
-                  transition-colors duration-200 font-medium">
-                  Ended
-                </button>
-              </div>
+              
             </div>
             
             <div className="overflow-hidden">
@@ -416,48 +482,45 @@ const ClientTender = () => {
                   </div>
                 </div>
                 
-                <div className="flex justify-between mt-6">
-                  <Link to={`/bids/${selectedTender.id}`} className="btn btn-outline btn-info gap-2 hover:bg-blue-50">
-                    <Eye className="w-5 h-5" />
-                    View All Bids
-                  </Link>
-                  
-                  {selectedTender.status !== 'ended' ? (
-                    <button 
-                      onClick={() => closeTender(selectedTender.id)}
-                      className="relative btn btn-error gap-2 hover:bg-red-700" 
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        <>
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                          Processing...
-                        </>
-                      ) : (
-                        <>
-                          <X className="w-5 h-5" />
-                          Close Tender
-                        </>
-                      )}
-                    </button>
-                  ) : (
-                    <button className="btn bg-gray-200 text-gray-600 cursor-not-allowed" disabled>
-                      <CheckCircle className="w-5 h-5 mr-2" />
-                      Closed
-                    </button>
-                  )}
-                </div>
+                <div className="flex justify-between items-center gap-4 px-6 pb-6">
+  <form method="dialog">
+    <button className="btn bg-white hover:bg-gray-100 text-gray-800 gap-2 border border-gray-200 shadow-sm hover:shadow">
+      <X className="w-5 h-5" />
+      Close
+    </button>
+  </form>
+
+  <div>
+    {selectedTender.status !== 'ended' ? (
+      <button 
+        onClick={() => closeTender(selectedTender.id)}
+        className="btn btn-error gap-2 hover:bg-red-700" 
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <>
+            <Loader2 className="w-5 h-5 animate-spin" />
+            Processing...
+          </>
+        ) : (
+          <>
+            <X className="w-5 h-5" />
+            Close Tender
+          </>
+        )}
+      </button>
+    ) : (
+      <button className="btn bg-gray-200 text-gray-600 cursor-not-allowed" disabled>
+        <CheckCircle className="w-5 h-5 mr-2" />
+        Closed
+      </button>
+    )}
+  </div>
+</div>
               </div>
             </>
           )}
-          <div className="modal-action bg-gray-50 p-4 border-t">
-            <form method="dialog" className="w-full flex justify-end">
-              <button className="btn bg-white hover:bg-gray-100 text-gray-800 gap-2">
-                <X className="w-5 h-5" />
-                Close
-              </button>
-            </form>
-          </div>
+          
         </div>
       </dialog>
     </div>
