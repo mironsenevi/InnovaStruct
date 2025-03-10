@@ -13,7 +13,7 @@ function Hero() {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                "Attendify can <span class='text-primary'>mark attendance</span>"
+                "Innovastruct can <span class='text-primary'>help building bridge between client and constructor</span>"
               )
               .pauseFor(1000)
               .deleteChars(15)

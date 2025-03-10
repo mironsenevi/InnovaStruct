@@ -11,10 +11,10 @@ const Features = () => {
   return (
     <section id="features" className="bg-white  font-Raleway pb-10">
       <div className="mx-auto max-w-screen-sm text-center">
-        <h2 className="mb-4 text-8xl tracking-tight font-Raleway text-black">
+        <h2 className="mb-4 text-6xl sm:text-8xl tracking-tight font-Raleway text-black">
           Features
         </h2>
-        <p className="font-light text-black lg:mb-8 sm:text-xl px-4 md:px-0">
+        <p className="font-light text-black lg:mb-8 text-base sm:text-xl px-4 md:px-0">
           Discover how we are enhancing your experience with our innovative
           features. Explore below to see how we are transforming the way you.
         </p>
