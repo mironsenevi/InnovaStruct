@@ -187,7 +187,7 @@ export const mockCompanies = [
     employees: '120',
     services: ['Residential', 'Eco-Friendly Homes', 'Landscaping'],
     coverImage: 'https://www.autodesk.com/blogs/construction/wp-content/uploads/2024/08/construction-site-safety-tips-types.jpg',
-    profileIcon: 'https://placehold.co/150',
+    profileIcon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcazUjM0yMSP1eV8E_8ThHql_1I2G1Ibx3ag&s',
     rating: 3.4,
     projects: [
       {

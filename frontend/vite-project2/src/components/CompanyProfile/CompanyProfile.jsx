@@ -49,14 +49,25 @@ const CompanyProfile = ({ company }) => {
   // Company Details Section
   const CompanyHeader = () => (
     <div className="card bg-base-100 shadow-xl mb-8">
-      <figure className="relative">
-        <img src={company.coverImage} alt={company.name} className="w-full h-80 object-cover rounded-t-lg" />
-        <div className="avatar absolute -bottom-10 left-8">
-          <div className="w-24 h-24 rounded-full ring-4 ring-white bg-white">
-            <img src={company.profileIcon} alt={company.name} className="rounded-full" />
+
+      <div className="relative">
+        <img 
+          src={company.coverImage || defaultCoverImage} 
+          alt={`${company.name} cover`} 
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
+        
+        {/* Update this avatar/icon section */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+          <div className="w-40 h-40 rounded-full ring-2 ring-yellow-600 ring-offset-base-100 ring-offset-2 bg-white overflow-hidden shadow-md">
+            <img 
+              src={company.profileIcon || defaultProfileIcon} 
+              alt={`${company.name} logo`}
+              className="w-full h-full object-cover" 
+            />
           </div>
         </div>
-      </figure>
+      </div>
       <div className="card-body pt-12">
         <div className="flex justify-between items-start">
           <div>
