@@ -28,11 +28,11 @@ const OurTeam = () => {
             </a>
             <div className="p-5">
               <h3 className="text-xl font-bold tracking-tight text-white">
-                <a href="#">Mohamed Aroos Mohamed Adil</a>
+                <a href="https://www.linkedin.com/in/aadilaroos/">Mohamed Aroos Mohamed Adil</a>
               </h3>
               <span className="text-gray-500">Fullstack Developer</span>
               <p className="mt-3 mb-4 font-light text-gray-400 ">
-                Aadil drives the technical strategy of Innovastruct and brand.
+                Aadil focuses on growth, structuring, and future initiatives.
               </p>
               <ul className="flex space-x-4 sm:mt-0">
                 <li>
@@ -73,7 +73,7 @@ const OurTeam = () => {
 
           {/* 2nd card */}
           <div className="items-center bg-gray-800 rounded-lg shadow sm:flex">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/omindu-abey/">
               <img
                 className="w-full h-full max-h-80 rounded-lg sm:rounded-none sm:rounded-l-lg"
                 src="../assets/omindu.jpg"
@@ -87,7 +87,7 @@ const OurTeam = () => {
               </h3>
               <span className="text-gray-500">Fullstack Developer</span>
               <p className="mt-3 mb-4 font-light text-gray-400 ">
-                Omindu drives the technical strategy of Innovastruct and brand.
+                Omindu manages brand positioning, outreach, and user engagement
               </p>
               <ul className="flex space-x-4 sm:mt-0">
                 <li>
@@ -128,7 +128,7 @@ const OurTeam = () => {
 
           {/* 2nd card */}
           <div className="items-center bg-gray-800 rounded-lg shadow sm:flex">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/miron-senevirathna-0b729a275/">
               <img
                 className="w-full h-full max-h-80 rounded-lg sm:rounded-none sm:rounded-l-lg"
                 src="../assets/miron.jpg"
@@ -142,7 +142,7 @@ const OurTeam = () => {
               </h3>
               <span className="text-gray-500">Fullstack Developer</span>
               <p className="mt-3 mb-4 font-light text-gray-400 ">
-                Miron drives the technical strategy of Innovastruct and brand.
+                Miron drives the platform's technical vision and development.
               </p>
               <ul className="flex space-x-4 sm:mt-0">
                 <li>
@@ -183,10 +183,10 @@ const OurTeam = () => {
 
           {/* 2nd card */}
           <div className="items-center bg-gray-800 rounded-lg shadow sm:flex">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/dinaya-juwan-wadu/">
               <img
                 className="w-full h-full max-h-80 rounded-lg sm:rounded-none sm:rounded-l-lg"
-                src="../assets/Dinaya.jpg"
+                src="../assets/dinaya.jpg"
                 alt="Dinaya image"
                 // style={{ maxHeight: "30" }} // Adjust minimum height as needed
               />
@@ -197,7 +197,7 @@ const OurTeam = () => {
               </h3>
               <span className="text-gray-500">Fullstack Developer</span>
               <p className="mt-3 mb-4 font-light text-gray-400 ">
-                Dinaya drives the technical strategy of Innovastruct and brand.
+                Dinaya optimizes streamlines execution and ensures operational excellence.
               </p>
               <ul className="flex space-x-4 sm:mt-0">
                 <li>
@@ -238,7 +238,7 @@ const OurTeam = () => {
 
           {/* 2nd card */}
           <div className="items-center bg-gray-800 rounded-lg shadow sm:flex">
-            <a href="#">
+            <a href="https://www.linkedin.com/in/saiganeshwaran-thillainathan-9828012b4/">
               <img
                 className="w-full h-full max-h-80 rounded-lg sm:rounded-none sm:rounded-l-lg
                 "
@@ -253,7 +253,7 @@ const OurTeam = () => {
               </h3>
               <span className="text-gray-500">Fullstack Developer</span>
               <p className="mt-3 mb-4 font-light text-gray-400 ">
-                Sai drives the technical strategy of Innovastruct and brand.
+                Sai oversees the planning and execution of platform features.
               </p>
               <ul className="flex space-x-4 sm:mt-0">
                 <li>
@@ -304,11 +304,11 @@ const OurTeam = () => {
             </a>
             <div className="p-5">
               <h3 className="text-xl font-bold tracking-tight text-white">
-                <a href="#">Dulain Perera</a>
+                <a href="https://www.linkedin.com/in/dulain-perera-091778292/">Dulain Perera</a>
               </h3>
               <span className="text-gray-500">Fullstack Developer</span>
               <p className="mt-3 mb-4 font-light text-gray-400 ">
-                Dulain drives the technical strategy of Innovastruct and brand.
+                Dulain ensures data protection, privacy, and regulatory adherence.
               </p>
               <ul className="flex space-x-4 sm:mt-0">
                 <li>

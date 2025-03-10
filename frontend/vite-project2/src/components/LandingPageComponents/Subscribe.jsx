@@ -37,9 +37,7 @@ function Subscribe() {
       </div>
 
       {/* Footer */}
-      <footer className="w-full text-center bg-black text-yellow-400 py-4 mt-8">
-        © Mantra Matrix  Team, All rights reserved.
-      </footer>
+     
     </div>
   );
 }
