@@ -23,7 +23,7 @@ function Navbar() {
       <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between h-16 items-center">
         <div className="flex items-center space-x-2 sm:space-x-4">
-  <img src="../assets/Logo.png" alt="Logo" className="h-12 sm:h-16 w-auto" />
+  <img src="../assets/Logo.png" alt="Logo" className="h-16 sm:h-16 w-auto" />
   <span className="hidden sm:block text-5xl font-bold text-yellow-400 ml-2">InnovaStruct</span>
 </div>
           {/* Desktop Navigation */}
