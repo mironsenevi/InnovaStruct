@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const ChooseLogin = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-8">Choose Login </h1>
+      <h1 className="text-3xl font-bold mb-8">Choose Login Type</h1>
       <div className="space-y-4">
         <Link
           to="/client/login"
