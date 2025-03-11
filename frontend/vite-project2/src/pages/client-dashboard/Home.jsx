@@ -21,7 +21,7 @@ const Home = () => {
   // Updated stats for home construction clients
   const statCards = [
     {
-      label: 'Home Projects',
+      label: 'Home Projec',
       extra: '+1 Planned',
       value: '1',
     },

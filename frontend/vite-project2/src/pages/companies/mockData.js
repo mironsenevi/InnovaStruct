@@ -10,7 +10,7 @@ export const mockCompanies = [
     location: 'Colombo, Sri Lanka',
     employees: '200',
     services: ['Commercial', 'Structural Engineering Services', 'Renovation'],
-    coverImage: '/assets/cover image 2.jpg',
+    coverImage: 'https://www.kalukandahouse.com/static/1f7c8059b045097d8c3a5e1da64f0591/eea4a/Photo%20Story_12.jpg',
     profileIcon: '/assets/LC Logo.png',
     rating: 4.5,
     projects: [
@@ -186,8 +186,8 @@ export const mockCompanies = [
     location: 'Kandy, Sri Lanka',
     employees: '120',
     services: ['Residential', 'Eco-Friendly Homes', 'Landscaping'],
-    coverImage: 'https://placehold.co/600x400',
-    profileIcon: 'https://placehold.co/150',
+    coverImage: 'https://www.autodesk.com/blogs/construction/wp-content/uploads/2024/08/construction-site-safety-tips-types.jpg',
+    profileIcon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcazUjM0yMSP1eV8E_8ThHql_1I2G1Ibx3ag&s',
     rating: 3.4,
     projects: [
       {
@@ -338,7 +338,7 @@ export const mockCompanies = [
     location: 'Galle, Sri Lanka',
     employees: '180',
     services: ['High-Rise Buildings', 'Residential', 'Infrastructure'],
-    coverImage: 'https://placehold.co/600x400',
+    coverImage: 'https://adaderanaenglish.s3.amazonaws.com/1668494616-Sri-Lanka-to-receive-several-employment-opportunities-in-Saudi-Arabia-6.jpg',
     profileIcon: 'https://placehold.co/150',
     rating: 3.7,
     projects: [
@@ -488,7 +488,7 @@ export const mockCompanies = [
     "location": "Trincomalee, Sri Lanka",
     "employees": "150",
     "services": ["Marine Infrastructure", "Ports & Harbors", "Coastal Protection"],
-    "coverImage": "https://placehold.co/600x400",
+    "coverImage": "https://www.dysconstructions.com/wp-content/uploads/2020/11/Construction-Companies.jpg",
     "profileIcon": "https://placehold.co/150",
     "rating": 3.6,
     "projects": [
@@ -628,7 +628,7 @@ export const mockCompanies = [
 },
 {
     "id": 5,
-    "name": "Urban Innovators Pvt Ltd",
+    "name": "Lions Home Pvt Ltd",
     "license": "License #LK56789",
     "shortDescription": "Pioneers in smart city development.",
     type: 'Commercial',
@@ -637,7 +637,7 @@ export const mockCompanies = [
     "location": "Negombo, Sri Lanka",
     "employees": "220",
     "services": ["Smart City Development", "Urban Planning", "Infrastructure"],
-    "coverImage": "https://placehold.co/600x400",
+    "coverImage": "https://lionshome.lk/wp-content/uploads/2019/07/lhomeslide2.jpg",
     "profileIcon": "https://placehold.co/150",
     "rating": 2.8,
     "projects": [
@@ -786,7 +786,7 @@ export const mockCompanies = [
     "location": "Jaffna, Sri Lanka",
     "employees": "500",
     "services": ["Highways", "Bridges", "Tunnels"],
-    "coverImage": "https://placehold.co/600x400",
+    "coverImage": "https://srilankaconstruction.lk/wp-content/uploads/2020/08/13-13.jpg",
     "profileIcon": "https://placehold.co/150",
     "rating": 4.4,
     "projects": [
@@ -935,7 +935,7 @@ export const mockCompanies = [
       "location": "Matara, Sri Lanka",
       "employees": "95",
       "services": ["Architectural Design", "Interior Design", "Consulting"],
-      "coverImage": "https://placehold.co/600x400",
+      "coverImage": "https://www.kalukandahouse.com/static/c52d2eb8191eca5cca6ca3cb0b981f20/7c09c/Photo%20Story_10.jpg",
       "profileIcon": "https://placehold.co/150",
       "rating": 4.9,
       "projects": [
@@ -1064,7 +1064,7 @@ export const mockCompanies = [
       "location": "Kurunegala, Sri Lanka",
       "employees": "160",
       "services": ["Piling", "Geotechnical Engineering", "Foundation Repair"],
-      "coverImage": "https://placehold.co/600x400",
+      "coverImage": "https://lionshome.lk/wp-content/uploads/2019/07/lhhomepage04.jpg",
       "profileIcon": "https://placehold.co/150",
       "rating": 4.5,
       "projects": [
@@ -1204,7 +1204,7 @@ export const mockCompanies = [
       "location": "Batticaloa, Sri Lanka",
       "employees": "80",
       "services": ["Sustainable Buildings", "Green Energy", "Recycling Construction"],
-      "coverImage": "https://placehold.co/600x400",
+      "coverImage": "https://lionshome.lk/wp-content/uploads/2019/07/blackrowimage01.jpg",
       "profileIcon": "https://placehold.co/150",
       "rating": 4.6,
       "projects": [
