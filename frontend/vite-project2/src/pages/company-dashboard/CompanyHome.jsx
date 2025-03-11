@@ -180,31 +180,32 @@ const CompanyHome = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {mainCards.map((card, index) => (
                   <div key={index} className="relative group">
-                    <Link 
-                      to={card.link}
-                      className={`${card.color} transform hover:scale-102 transition-all duration-200 p-6 sm:p-8 rounded-xl shadow-lg text-white h-full block`}
-                    >
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-center mb-4">
-                          <div className="p-3 bg-white/10 rounded-full mr-4">
-                            {card.icon}
-                          </div>
-                          <div>
-                            <h2 className="text-2xl sm:text-3xl font-bold">{card.title}</h2>
-                            {card.stats && (
-                              <p className="text-sm opacity-90 mt-1">{card.stats}</p>
-                            )}
-                          </div>
-                        </div>
-                        <p className="text-lg opacity-90 mb-4">{card.description}</p>
-                        <div className="mt-auto text-sm opacity-75 flex items-center">
-                          <span>View details</span>
-                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </Link>
+                  
+                  <Link 
+  to="/company/portfolio"
+  className={`${card.color} transform hover:scale-102 transition-all duration-200 p-6 sm:p-8 rounded-xl shadow-lg text-white h-full block`}
+>
+  <div className="flex flex-col h-full">
+    <div className="flex items-center mb-4">
+      <div className="p-3 bg-white/10 rounded-full mr-4">
+        {card.icon}
+      </div>
+      <div>
+        <h2 className="text-2xl sm:text-3xl font-bold">{card.title}</h2>
+        {card.stats && (
+          <p className="text-sm opacity-90 mt-1">{card.stats}</p>
+        )}
+      </div>
+    </div>
+    <p className="text-lg opacity-90 mb-4">{card.description}</p>
+    <div className="mt-auto text-sm opacity-75 flex items-center">
+      <span>View details</span>
+      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  </div>
+</Link>
                     {card.badge && (
                       <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium animate-pulse">
                         {card.badge.count} {card.badge.text}
