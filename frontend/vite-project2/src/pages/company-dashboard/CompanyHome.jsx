@@ -64,7 +64,7 @@ const CompanyHome = () => {
       title: 'Quote Requests',
       icon: <FileText size={48} />,
       description: 'Review new requests for quotes and send proposals.',
-      link: '/company/quotes',
+      link: '/company/tender',
       color: 'bg-gradient-to-r from-yellow-500 to-amber-400',
       stats: '12 new requests',
       badge: {
@@ -77,25 +77,25 @@ const CompanyHome = () => {
   // Quick action tiles
   const quickActionTiles = [
     {
-      title: 'Clients',
+      title: 'Portfolio',
       icon: <Users size={40} />,
       description: 'Manage client relationships and communications.',
-      link: '/company/clients',
+      link: '/company/portfolio',
       color: 'bg-amber-400',
       count: 24
     },
     {
-      title: 'Schedule',
+      title: 'Tender',
       icon: <Calendar size={40} />,
       description: 'View and manage your project timeline and milestones.',
-      link: '/company/schedule',
+      link: '/company/tender',
       color: 'bg-amber-400'
     },
     {
       title: 'Performance',
       icon: <TrendingUp size={40} />,
       description: 'Track your company metrics and growth statistics.',
-      link: '/company/performance',
+      link: '/company/insights',
       color: 'bg-amber-400'
     },
     {
@@ -182,7 +182,7 @@ const CompanyHome = () => {
                   <div key={index} className="relative group">
                   
                   <Link 
-  to="/company/portfolio"
+  to="/company/insights"
   className={`${card.color} transform hover:scale-102 transition-all duration-200 p-6 sm:p-8 rounded-xl shadow-lg text-white h-full block`}
 >
   <div className="flex flex-col h-full">
@@ -219,7 +219,7 @@ const CompanyHome = () => {
               <div className="bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="border-b border-gray-100 p-5 flex justify-between items-center">
                   <h2 className="text-xl font-bold">Upcoming Deadlines</h2>
-                  <Link to="/company/deadlines" className="text-yellow-600 hover:text-yellow-700 text-sm font-medium">
+                  <Link to="/company/tender" className="text-yellow-600 hover:text-yellow-700 text-sm font-medium">
                     View all
                   </Link>
                 </div>
@@ -297,14 +297,7 @@ const CompanyHome = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="p-4 bg-gray-50">
-                  <Link to="/company/activities" className="text-yellow-600 hover:text-yellow-700 text-sm font-medium flex items-center justify-center">
-                    View all activity
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
+                
               </div>
   
               {/* Switch to Client Dashboard */}
