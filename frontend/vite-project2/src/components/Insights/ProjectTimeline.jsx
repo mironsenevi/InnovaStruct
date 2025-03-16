@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Clock, Home, Building2, Construction, CheckCircle2 } from 'lucide-react';
 
 const ProjectTimeline = () => {
