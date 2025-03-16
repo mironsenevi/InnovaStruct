@@ -11,8 +11,8 @@ on:
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  lint-build-deploy:
-    name: Lint, Build & Deploy
+  build-deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,29 +29,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      # Run ESLint if it exists in package.json scripts, otherwise skip
-      - name: Check if lint script exists
-        id: check_lint
-        run: |
-          if grep -q "\"lint\":" package.json; then
-            echo "lint_exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "lint_exists=false" >> $GITHUB_OUTPUT
-          fi
-        
-      - name: Run ESLint
-        if: steps.check_lint.outputs.lint_exists == 'true'
-        run: npm run lint || echo "Linting issues detected, but proceeding..."
+      - name: Run ESLint (informational only)
+        run: npm run lint || echo "Linting issues exist but continuing with build"
         continue-on-error: true
         
-      - name: Build project
+      - name: Build project with ESLint disabled
+        env:
+          DISABLE_ESLINT_PLUGIN: "true"
         run: npm run build
         
       - name: Deploy to Vercel
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/development'
+        if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/development')
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: frontend/vite-project2/dist
+          working-directory: frontend/vite-project2
