@@ -24,10 +24,9 @@ const OurTeam = () => {
               role: "Fullstack Developer",
               description: "Aadil focuses on growth, structuring, and future initiatives.",
               social: {
-                instagram: "https://www.instagram.com",
-                linkedin: "https://www.linkedin.com/",
-                github: "https://github.com/",
-                website: "https://www.google.com/"
+                
+                github: "https://github.com/AdilAroos",
+               
               }
             },
             {
@@ -37,10 +36,9 @@ const OurTeam = () => {
               role: "Fullstack Developer",
               description: "Omindu manages brand positioning, outreach, and user engagement",
               social: {
-                instagram: "https://www.instagram.com/adibmbrk",
-                linkedin: "https://www.linkedin.com/in/adibmbrk",
-                github: "https://github.com/adibmbrk",
-                website: "https://adibmbrk.netlify.app"
+                
+                github: "https://github.com/omen-do-abey",
+                
               }
             },
             {
@@ -50,10 +48,9 @@ const OurTeam = () => {
               role: "Fullstack Developer",
               description: "Miron drives the platform's technical vision and development.",
               social: {
-                instagram: "https://www.instagram.com/_apzolo_",
-                linkedin: "https://www.linkedin.com/in/nethmini-apsara/",
-                github: "https://github.com/nethmini22",
-                website: "https://www.google.com/"
+                
+                github: "https://github.com/mironsenevi",
+                
               }
             },
             {
@@ -63,10 +60,9 @@ const OurTeam = () => {
               role: "Fullstack Developer",
               description: "Dinaya optimizes streamlines execution and ensures operational excellence.",
               social: {
-                instagram: "https://www.instagram.com/",
-                linkedin: "https://www.linkedin.com/",
-                github: "https://github.com/",
-                website: "https://www.google.com/"
+                
+                github: "https://github.com/DinayaJW",
+                
               }
             },
             {
@@ -76,10 +72,9 @@ const OurTeam = () => {
               role: "Fullstack Developer",
               description: "Sai oversees the planning and execution of platform features.",
               social: {
-                instagram: "https://www.instagram.com/inojh.02/",
-                linkedin: "https://www.linkedin.com/in/inojh/",
-                github: "https://github.com/Inoj-Hettiarachchi",
-                website: "https://www.google.com/"
+                
+                github: "https://github.com/SaiGaneshWaran",
+                
               }
             },
             {
@@ -89,10 +84,9 @@ const OurTeam = () => {
               role: "Fullstack Developer",
               description: "Dulain ensures data protection, privacy, and regulatory adherence.",
               social: {
-                instagram: "https://www.instagram.com",
-                linkedin: "https://www.linkedin.com/",
-                github: "https://github.com/",
-                website: "https://www.google.com/"
+                
+                github: "https://github.com/dulainperera",
+               
               }
             }
             // ... Add other team members data here

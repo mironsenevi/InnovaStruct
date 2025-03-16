@@ -48,53 +48,15 @@ const HeroTest = () => {
               className="rounded-lg w-full h-auto shadow-2xl" 
               alt="Company Projects" 
             />
-            <button
-              className="absolute w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full inset-0 m-auto duration-150 bg-blue-500 hover:bg-blue-600 ring-offset-2 focus:ring text-white shadow-lg"
-              onClick={() => setVideoPopUp(true)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-5 h-5 sm:w-6 sm:h-6 m-auto"
-              >
-                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-              </svg>
-            </button>
+            
+              
+           
           </div>
         </div>
       </div>
 
       {/* Video Popup */}
-      {isVideoPoppedUp ? (
-        <div className="fixed inset-0 w-full h-full flex items-center justify-center z-50">
-          <div
-            className="absolute inset-0 w-full h-full bg-black/70 backdrop-blur-sm"
-            onClick={() => setVideoPopUp(false)}
-          ></div>
-          <div className="px-4 relative w-full max-w-[90vw] md:max-w-3xl">
-            <button
-              className="w-10 h-10 sm:w-12 sm:h-12 mb-4 rounded-full duration-150 bg-gray-800 hover:bg-gray-700 text-white absolute -top-14 right-4"
-              onClick={() => setVideoPopUp(false)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-5 h-5 m-auto"
-              >
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-              </svg>
-            </button>
-            <video
-              className="rounded-lg w-full"
-              controls
-              autoPlay={true}
-            >
-            </video>
-          </div>
-        </div>
-      ) : null}
+      
     </section>
   );
 };
