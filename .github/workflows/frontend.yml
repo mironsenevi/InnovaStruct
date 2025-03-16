@@ -25,13 +25,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          # Removed cache option as it's causing issues
           
       - name: Install dependencies
         run: npm ci
         
+      # Run ESLint if it exists in package.json scripts, otherwise skip
+      - name: Check if lint script exists
+        id: check_lint
+        run: |
+          if grep -q "\"lint\":" package.json; then
+            echo "lint_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "lint_exists=false" >> $GITHUB_OUTPUT
+          fi
+        
       - name: Run ESLint
-        run: npm run lint || echo "Linting had warnings but continuing..."
+        if: steps.check_lint.outputs.lint_exists == 'true'
+        run: npm run lint || echo "Linting issues detected, but proceeding..."
+        continue-on-error: true
         
       - name: Build project
         run: npm run build
