@@ -303,7 +303,7 @@ const CompanyTenderDashboard = () => {
     )}
 
           {/* Chatbot */}
-          <TenderChatbot />
+          <TenderChatbot userType="company" />
         </div>
       </div>
     </div>

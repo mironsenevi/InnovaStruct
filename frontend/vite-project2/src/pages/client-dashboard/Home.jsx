@@ -48,7 +48,7 @@ const Home = () => {
       title: 'Find Builders',
       icon: <Building size={48} />,
       description: 'Browse trusted home builders to bring your dream house to life.',
-      link: '/client/company/1',
+      link: '/client/companies',
       color: 'bg-gradient-to-r from-yellow-500 to-amber-400',
       stats: '5 builders'
     },
@@ -70,10 +70,10 @@ const Home = () => {
   // Updated secondary card for consultations instead of contacts
   const secondaryCards = [
     {
-      title: 'Consultations',
+      title: 'Insights',
       icon: <Users size={40} />,
       description: 'Chat with home design experts for personalized advice.',
-      link: '/client/contacts',
+      link: '/client/insights',
       color: 'bg-amber-400',
       count: 5
     },
@@ -107,7 +107,7 @@ const Home = () => {
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
               Hello, <span className="text-yellow-500">Omindu</span>
             </h1>
-            <p className="text-gray-600 mt-2">Let's build your home!</p>
+            <p className="text-gray-600 mt-2">Let build your home!</p>
           </div>
           
           {/* Stats Overview Section */}
@@ -196,20 +196,7 @@ const Home = () => {
                 </Link>
               ))}
   
-              <Link to="/client/notifications" className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition-shadow">
-                <div className="bg-yellow-100 p-3 rounded-full mb-3">
-                  <Bell className="w-6 h-6 text-yellow-600" />
-                </div>
-                <h3 className="font-medium text-gray-800">Notifications</h3>
-                <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full mt-2">3 new</span>
-              </Link>
-  
-              <Link to="/client/reports" className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center text-center hover:shadow-lg transition-shadow">
-                <div className="bg-yellow-100 p-3 rounded-full mb-3">
-                  <Activity className="w-6 h-6 text-yellow-600" />
-                </div>
-                <h3 className="font-medium text-gray-800">Reports</h3>
-              </Link>
+              
             </div>
   
             {/* Recent Activity */}
@@ -232,14 +219,7 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
-              <div className="p-4 bg-gray-50">
-                <Link to="/client/activities" className="text-yellow-600 hover:text-yellow-700 text-sm font-medium flex items-center justify-center">
-                  View all activity
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+              
             </div>
   
             {/* Company Switch Section */}

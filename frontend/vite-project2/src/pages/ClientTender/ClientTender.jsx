@@ -5,6 +5,7 @@ import {
   PlusCircle, FileText, Clock, Users, TrendingDown, CheckCircle, AlertCircle,
   Sparkles, TrendingUp, Calendar, ChevronRight, Eye, X, Loader2
 } from 'lucide-react';
+import TenderChatbot from '../../components/companyTender/TenderChatbot.jsx';
 
 
 const ClientTender = () => {
@@ -404,6 +405,7 @@ const ClientTender = () => {
                 })}
               </div>
             </div>
+            <TenderChatbot userType="client" />
           </div>
         </div>
       </div>
