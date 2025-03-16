@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const AdsSlideshow = () => {
@@ -36,21 +36,36 @@ const AdsSlideshow = () => {
     }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % ads.length);
-  };
+  }, [ads.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? ads.length - 1 : prev - 1));
-  };
+  }, [ads.length]);
 
   useEffect(() => {
-    let timer;
+    let timer = null;
     if (isAutoPlaying) {
       timer = setInterval(nextSlide, 5000);
     }
-    return () => clearInterval(timer);
-  }, [isAutoPlaying]);
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [isAutoPlaying, nextSlide]);
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+    
+    // Reset auto-play after 5 seconds
+    const autoPlayTimer = setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 5000);
+    
+    // Cleanup timeout if component unmounts
+    return () => clearTimeout(autoPlayTimer);
+  };
 
   return (
     <div className="relative w-full bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-8">
@@ -78,12 +93,14 @@ const AdsSlideshow = () => {
         <button 
           className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 sm:p-2 rounded-full"
           onClick={prevSlide}
+          aria-label="Previous slide"
         >
           <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
         </button>
         <button 
           className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 sm:p-2 rounded-full"
           onClick={nextSlide}
+          aria-label="Next slide"
         >
           <ChevronRight size={20} className="sm:w-6 sm:h-6" />
         </button>
@@ -95,11 +112,8 @@ const AdsSlideshow = () => {
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 currentSlide === index ? 'bg-yellow-500 w-6' : 'bg-gray-300'
               }`}
-              onClick={() => {
-                setCurrentSlide(index);
-                setIsAutoPlaying(false);
-                setTimeout(() => setIsAutoPlaying(true), 5000);
-              }}
+              onClick={() => handleDotClick(index)}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
