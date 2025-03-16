@@ -1,13 +1,14 @@
 name: Frontend CI/CD
+
 on:
   push:
     branches: [main, development]
     paths:
-      - 'frontend/'
+      - 'frontend/**'
   pull_request:
     branches: [main, development]
     paths:
-      - 'frontend/'
+      - 'frontend/**'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
@@ -16,38 +17,33 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./frontend/vite-project2
+        working-directory: frontend/vite-project2
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v4
+
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
-          
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('./frontend/vite-project2/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-            
+          cache: 'npm'
+          cache-dependency-path: frontend/vite-project2/package-lock.json
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run ESLint
-        run: npm run lint || echo "Linting had warnings but continuing..."
-        
+        run: npm run lint --if-present || echo "Linting warnings ignored"
+
       - name: Build project
-        run: npm run build
-        
+        run: npm run build --if-present
+
       - name: Deploy to Vercel
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/development'
-        uses: amondnet/vercel-action@v20
+        uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./frontend/vite-project2/dist
+          working-directory: frontend/vite-project2
