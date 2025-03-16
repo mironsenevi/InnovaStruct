@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/client-dashboard/Home";
-import Login from "./pages/Authentication/Login";
+
 import CompanyHome from "./pages/company-dashboard/CompanyHome";
 import ClientInsights from "./pages/insights/ClientInsights";
 import CompanyInsights from "./pages/insights/CompanyInsights";
@@ -31,7 +31,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          
 
           <Route path="/client">
             <Route path="home" element={<Home />} />
