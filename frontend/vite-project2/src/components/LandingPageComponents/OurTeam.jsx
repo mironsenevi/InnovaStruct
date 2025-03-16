@@ -21,8 +21,8 @@ const OurTeam = () => {
               name: "Mohamed Aroos Mohamed Adil",
               image: "/assets/aadil.jpg",
               linkedin: "https://www.linkedin.com/in/aadilaroos/",
-              role: "Fullstack Developer",
-              description: "Aadil focuses on growth, structuring, and future initiatives.",
+              role: " The Visionary Leader & Frontend Expert ",
+              description: "Driving innovation with leadership and code.",
               social: {
                 
                 github: "https://github.com/AdilAroos",
@@ -33,8 +33,8 @@ const OurTeam = () => {
               name: "Omindu Abeywardane",
               image: "../assets/omindu.jpg",
               linkedin: "https://www.linkedin.com/in/omindu-abey/",
-              role: "Fullstack Developer",
-              description: "Omindu manages brand positioning, outreach, and user engagement",
+              role: " UI/UX Innovator & Frontend Craftsman ",
+              description: "Shaping seamless user experiences with creativity.",
               social: {
                 
                 github: "https://github.com/omen-do-abey",
@@ -45,8 +45,8 @@ const OurTeam = () => {
               name: "Miron Senevirathna",
               image: "../assets/miron.jpg",
               linkedin: "https://www.linkedin.com/in/miron-senevirathna-0b729a275/",
-              role: "Fullstack Developer",
-              description: "Miron drives the platform's technical vision and development.",
+              role: " Full-Stack Developer & Problem Solver ",
+              description: "Building dynamic solutions from front to back.",
               social: {
                 
                 github: "https://github.com/mironsenevi",
@@ -57,8 +57,8 @@ const OurTeam = () => {
               name: "Dinaya Yuhansi",
               image: "../assets/dinaya.jpg",
               linkedin: "https://www.linkedin.com/in/dinaya-juwan-wadu/",
-              role: "Fullstack Developer",
-              description: "Dinaya optimizes streamlines execution and ensures operational excellence.",
+              role: " Frontend Developer & Marketing Strategist ",
+              description: "Bridging tech and storytelling for impact.",
               social: {
                 
                 github: "https://github.com/DinayaJW",
@@ -69,8 +69,8 @@ const OurTeam = () => {
               name: "Saiganeshwaran Thillainathan",
               image: "../assets/saiganesh.jpg",
               linkedin: "https://www.linkedin.com/in/saiganeshwaran-thillainathan-9828012b4/",
-              role: "Fullstack Developer",
-              description: "Sai oversees the planning and execution of platform features.",
+              role: " Frontend Enthusiast & Marketing Guru ",
+              description: "Bringing brands to life with design and strategy.",
               social: {
                 
                 github: "https://github.com/SaiGaneshWaran",
@@ -81,8 +81,8 @@ const OurTeam = () => {
               name: "Dulain Perera",
               image: "../assets/dulain.jpg",
               linkedin: "https://www.linkedin.com/in/dulain-perera-091778292/",
-              role: "Fullstack Developer",
-              description: "Dulain ensures data protection, privacy, and regulatory adherence.",
+              role: "Backend Architect & Data Maestro ",
+              description: "Powering robust systems behind the scenes.",
               social: {
                 
                 github: "https://github.com/dulainperera",
