@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calculator, Building, MapPin, ArrowRightCircle, Home, Store, Wrench } from 'lucide-react';
 
 const CostCalculator = () => {

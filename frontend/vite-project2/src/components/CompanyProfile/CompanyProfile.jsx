@@ -52,7 +52,7 @@ const CompanyProfile = ({ company }) => {
 
       <div className="relative">
         <img 
-          src={company.coverImage || defaultCoverImage} 
+          src={company.coverImage } 
           alt={`${company.name} cover`} 
           className="w-full h-48 object-cover rounded-t-lg"
         />
@@ -61,7 +61,7 @@ const CompanyProfile = ({ company }) => {
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
           <div className="w-40 h-40 rounded-full ring-2 ring-yellow-600 ring-offset-base-100 ring-offset-2 bg-white overflow-hidden shadow-md">
             <img 
-              src={company.profileIcon || defaultProfileIcon} 
+              src={company.profileIcon } 
               alt={`${company.name} logo`}
               className="w-full h-full object-cover" 
             />

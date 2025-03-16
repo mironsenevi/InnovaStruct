@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Building, Star, MapPin, Activity, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { mockCompanies } from '../../pages/companies/mockData';

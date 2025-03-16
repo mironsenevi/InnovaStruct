@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Plus } from 'lucide-react';
 import CompanyNavbar from '../../components/CompanyNavbar';
 import CreatePortfolioForm from './CreatePortfolioForm.jsx';
@@ -35,7 +35,7 @@ const CompanyPortfolio = () => {
                     Create Your Company Portfolio
                   </h1>
                   <p className="text-gray-600 mb-8">
-                    Showcase your company's expertise, past projects, and achievements to attract potential clients.
+                    Showcase your company is expertise, past projects, and achievements to attract potential clients.
                   </p>
                   <button
                     onClick={() => setShowCreateForm(true)}

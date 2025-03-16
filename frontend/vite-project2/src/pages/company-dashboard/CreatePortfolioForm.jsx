@@ -62,35 +62,36 @@ const CreatePortfolioForm = ({ onCancel }) => {
           return "Please select at least one service";
         return null;
 
-      case 3: // Projects
+      case 3: {// Projects
         const invalidProject = formData.projects.find(
-          (project) =>
+           (project) =>
             !project.name.trim() ||
             !project.description.trim() ||
             !project.completionYear
         );
         if (invalidProject) return "Please complete all project details";
         return null;
-
+      }
       case 4: // Financial Info
         // Optional step - no validation required
         return null;
 
-      case 5: // Certifications
-        const invalidCert = formData.certifications.find(
-          (cert) =>
-            !cert.name.trim() || !cert.organization.trim() || !cert.issueDate
-        );
-        if (invalidCert) return "Please complete all certification details";
-        return null;
-
-      case 6: // Contact Info
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!formData.email.trim()) return "Email is required";
-        if (!emailRegex.test(formData.email))
-          return "Please enter a valid email";
-        if (!formData.phone.trim()) return "Phone number is required";
-        return null;
+      case 5: {// Certifications
+      const invalidCert = formData.certifications.find(
+        (cert) =>
+          !cert.name.trim() || !cert.organization.trim() || !cert.issueDate
+      );
+      if (invalidCert) return "Please complete all certification details";
+      return null;}
+    
+    case 6: { // Contact Info - Added block scope with curly braces
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Removed extra quotes
+      if (!formData.email.trim()) return "Email is required";
+      if (!emailRegex.test(formData.email))
+        return "Please enter a valid email";
+      if (!formData.phone.trim()) return "Phone number is required";
+      return null;
+    }
 
       default:
         return null;

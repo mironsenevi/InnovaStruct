@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Clock, DollarSign, MapPin, Users, ArrowUpRight, X, Upload } from 'lucide-react';
 
