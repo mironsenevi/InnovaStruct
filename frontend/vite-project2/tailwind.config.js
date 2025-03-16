@@ -12,11 +12,21 @@ export default {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'fadeIn': 'fadeIn 0.3s ease-out forwards',
+        'countdown-pulse': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         'infinite-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
+        },
+        'fadeIn': {
+          from: { opacity: '0', transform: 'scale(0.9)' },
+          to: { opacity: '1', transform: 'scale(1)' },
+        },
+        'pulse': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.85' },
         }
       },
       colors: {
@@ -35,7 +45,14 @@ export default {
           "800": "#001e45",
           "900": "#000f23"
         }
-      },                    
+      },
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(8px)',
+      },
+      scale: {
+        '102': '1.02',
+      },
     },
   },
   plugins: [require("daisyui")],

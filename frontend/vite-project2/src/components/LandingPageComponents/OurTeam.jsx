@@ -24,7 +24,7 @@ const OurTeam = () => {
               role: " The Visionary Leader & Frontend Expert ",
               description: "Driving innovation with leadership and code.",
               social: {
-                
+                instagram:"https://www.instagram.com/aadilaroos?igsh=eDRmcm4xd2s3NTM2&utm_source=qr",
                 github: "https://github.com/AdilAroos",
                
               }
@@ -36,7 +36,7 @@ const OurTeam = () => {
               role: " UI/UX Innovator & Frontend Craftsman ",
               description: "Shaping seamless user experiences with creativity.",
               social: {
-                
+                instagram:"https://www.instagram.com/_omen.do_/profilecard/?igsh=MXZ0b3NzZjlvZ3owcA==",
                 github: "https://github.com/omen-do-abey",
                 
               }
@@ -48,7 +48,7 @@ const OurTeam = () => {
               role: " Full-Stack Developer & Problem Solver ",
               description: "Building dynamic solutions from front to back.",
               social: {
-                
+                instagram:"https://www.instagram.com/mironsenevi?igsh=MTBkM2RveDVmd2s2NA==",
                 github: "https://github.com/mironsenevi",
                 
               }
@@ -60,6 +60,7 @@ const OurTeam = () => {
               role: " Frontend Developer & Marketing Strategist ",
               description: "Bridging tech and storytelling for impact.",
               social: {
+                instagram:"https://www.instagram.com/din.y_/",
                 
                 github: "https://github.com/DinayaJW",
                 
@@ -72,6 +73,7 @@ const OurTeam = () => {
               role: " Frontend Enthusiast & Marketing Guru ",
               description: "Bringing brands to life with design and strategy.",
               social: {
+                instagram:"https://www.instagram.com/saiganeshwaran_3/",
                 
                 github: "https://github.com/SaiGaneshWaran",
                 
@@ -84,6 +86,7 @@ const OurTeam = () => {
               role: "Backend Architect & Data Maestro ",
               description: "Powering robust systems behind the scenes.",
               social: {
+                instagram:"https://www.instagram.com/dulain_03/",
                 
                 github: "https://github.com/dulainperera",
                
