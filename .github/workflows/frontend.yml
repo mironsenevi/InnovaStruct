@@ -6,7 +6,7 @@ on:
       - 'frontend/**'
   pull_request:
     branches: [main, development]
-    paths:
+    paths: 
       - 'frontend/**'
   workflow_dispatch:
 
