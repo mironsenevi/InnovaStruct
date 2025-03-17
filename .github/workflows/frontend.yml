@@ -38,9 +38,7 @@ jobs:
       - name: Deploy to Vercel
         if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/development')
         run: |
-          ls -la dist
-          export VERCEL_PROJECT_NAME=innova-struct
-          vercel dist --token=${{ secrets.VERCEL_TOKEN }} --name $VERCEL_PROJECT_NAME --confirm --prod
+          npx vercel --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
         env:
-           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
