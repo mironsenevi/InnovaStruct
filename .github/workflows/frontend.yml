@@ -38,7 +38,8 @@ jobs:
       - name: Deploy to Vercel
         if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/development')
         run: |
-          vercel deploy ./dist --token=${{ secrets.VERCEL_TOKEN }} --yes --prod
+          ls -la
+          vercel --cwd . --token=${{ secrets.VERCEL_TOKEN }} --yes --prod
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
