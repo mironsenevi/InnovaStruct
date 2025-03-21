@@ -1,15 +1,12 @@
 // filepath: c:\Users\Omindu Abeywardane\Documents\SDGP\InnovaStruct\frontend\vite-project2\src\components\AdSystem\AdContext.js
 import React, { createContext, useState, useEffect } from 'react';
+import mockAds from './AdMockData'; // Import the mock data
 
 export const AdContext = createContext();
 
 export const AdProvider = ({ children }) => {
-  const [ads, setAds] = useState([
-    { id: 1, image: '/assets/ad1.jpg', link: 'https://example.com/ad1', altText: 'Ad for product 1' },
-    { id: 2, image: '/assets/ad2.jpg', link: 'https://example.com/ad2', altText: 'Check out product 2' },
-    { id: 3, image: '/assets/ad3.jpg', link: 'https://example.com/ad3', altText: 'Learn more about product 3' },
-  ]);
-
+  const [ads, setAds] = useState(mockAds);
+  
   // Function to add a new ad
   const addAd = (newAd) => {
     setAds([...ads, { ...newAd, id: Date.now() }]);
