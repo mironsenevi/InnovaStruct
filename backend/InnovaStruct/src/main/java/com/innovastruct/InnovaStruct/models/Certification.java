@@ -8,7 +8,7 @@ import java.util.Date;
 public class Certification {
     private String name; // Certification Name
     private String organization; // Issuing Organization
-    private Date issueDate;
+    private Date issueDate;        // Date of issue
     private Date expiryDate; // Optional expiry date
     private String imageUrl; // URL to the uploaded certificate image/document
 }
