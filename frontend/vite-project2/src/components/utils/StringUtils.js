@@ -5,6 +5,10 @@
  * This file is designed to be imported and used across the application.
  */
 
+//-----------------------------------------------------------------------------
+// String Utility Functions
+//-----------------------------------------------------------------------------
+
 /**
  * truncateString(str, maxLength, suffix)
  *
@@ -30,10 +34,6 @@ const truncateString = (str, maxLength, suffix = "...") => {
   
     return str.substring(0, maxLength) + suffix;
   };
-  
-  //-----------------------------------------------------------------------------
-  // Additional functions can be added below to expand the utility library.
-  //-----------------------------------------------------------------------------
   
   /**
    * capitalizeFirstLetter(str)
@@ -176,6 +176,82 @@ const truncateString = (str, maxLength, suffix = "...") => {
     return str.replace(/\s/g, "");
   };
   
+  //-----------------------------------------------------------------------------
+  // Additional Utility Functions
+  //-----------------------------------------------------------------------------
+  
+  /**
+   * repeatString(str, times)
+   *
+   * Repeats a string a specified number of times.
+   *
+   * @param {string} str The string to repeat.
+   * @param {number} times The number of times to repeat the string.
+   * @returns {string} The repeated string.
+   */
+  const repeatString = (str, times) => {
+    if (!str || times <= 0) {
+      return "";
+    }
+    return str.repeat(times);
+  };
+  
+  /**
+   * padString(str, length, char)
+   *
+   * Pads a string to a specified length with a given character.
+   *
+   * @param {string} str The string to pad.
+   * @param {number} length The desired length of the padded string.
+   * @param {string} char The character to use for padding.
+   * @returns {string} The padded string.
+   */
+  const padString = (str, length, char = " ") => {
+    if (!str) {
+      return "";
+    }
+    return str.padStart((str.length + length) / 2, char).padEnd(length, char);
+  };
+  
+  /**
+   * convertToCamelCase(str)
+   *
+   * Converts a string to camelCase.
+   *
+   * @param {string} str The string to convert.
+   * @returns {string} The camelCased string.
+   */
+  const convertToCamelCase = (str) => {
+    if (!str) {
+      return "";
+    }
+    return str
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
+  };
+  
+  /**
+   * convertToSnakeCase(str)
+   *
+   * Converts a string to snake_case.
+   *
+   * @param {string} str The string to convert.
+   * @returns {string} The snake_cased string.
+   */
+  const convertToSnakeCase = (str) => {
+    if (!str) {
+      return "";
+    }
+    return str
+      .replace(/([a-z])([A-Z])/g, "$1_$2")
+      .replace(/\s+/g, "_")
+      .toLowerCase();
+  };
+  
+  //-----------------------------------------------------------------------------
+  // Export Functions
+  //-----------------------------------------------------------------------------
+  
   export {
     truncateString,
     capitalizeFirstLetter,
@@ -186,4 +262,8 @@ const truncateString = (str, maxLength, suffix = "...") => {
     countOccurrences,
     isPalindrome,
     removeWhitespace,
+    repeatString,
+    padString,
+    convertToCamelCase,
+    convertToSnakeCase,
   };
