@@ -156,14 +156,39 @@ package com.innovastruct.InnovaStruct.models;
          * @return A string representation of the Role object
          */
         @Override
-        public String toString() {
-            return "Role{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", description='" + description + '\'' +
-                    ", permissions=" + permissions +
-                    ", active=" + active +
-                    '}';
+        /**
+ * Returns a formatted string representation of the Role object.
+ * Presents the role information in a more structured and readable format.
+ * 
+ * @return A structured string representation of the Role object
+ */
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Role Details:\n");
+    sb.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+    sb.append(String.format("ID: %d\n", id));
+    sb.append(String.format("Name: %s\n", name));
+    sb.append(String.format("Status: %s\n", active ? "Active" : "Inactive"));
+    sb.append("────────────────────────────────────────────\n");
+    sb.append("Description:\n").append(description).append("\n");
+    sb.append("────────────────────────────────────────────\n");
+    sb.append("Permissions:\n");
+    
+    if (permissions != null && !permissions.isEmpty()) {
+        int count = 1;
+        for (String permission : permissions) {
+            sb.append(String.format("  %d. %s\n", count++, permission));
         }
+    } else {
+        sb.append("  No permissions assigned\n");
+    }
+    
+    sb.append("────────────────────────────────────────────\n");
+    sb.append(String.format("Created: %s\n", createdAt));
+    sb.append(String.format("Last Updated: %s\n", updatedAt != null ? updatedAt : "Never"));
+    sb.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+    
+    return sb.toString();
+}
     }
     
