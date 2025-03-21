@@ -1,0 +1,29 @@
+/* filepath: c:\Users\Omindu Abeywardane\Documents\SDGP\InnovaStruct\frontend\vite-project2\src\components\AdSystem\AdBanner.css */
+.ad-banner {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    overflow: hidden;
+  }
+  
+  .ad-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .ad-slide.active {
+    opacity: 1;
+  }
+  
+  .ad-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Add more styles as needed, including media queries for responsiveness */
