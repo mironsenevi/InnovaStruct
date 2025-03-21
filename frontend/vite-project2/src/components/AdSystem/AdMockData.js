@@ -298,6 +298,306 @@ const mockAds = [
       image: '/assets/ad50.jpg',
       link: 'https://example.com/ad50',
       altText: 'Find the perfect outfit for your next special occasion.'
+    },
+    {
+      id: 51,
+      image: '/assets/ad51.jpg',
+      link: 'https://example.com/ad51',
+      altText: 'Explore the wonders of the underwater world with our scuba diving tours.'
+    },
+    {
+      id: 52,
+      image: '/assets/ad52.jpg',
+      link: 'https://example.com/ad52',
+      altText: 'Learn about the latest advancements in artificial intelligence and machine learning.'
+    },
+    {
+      id: 53,
+      image: '/assets/ad53.jpg',
+      link: 'https://example.com/ad53',
+      altText: 'Support organizations that are working to combat climate change.'
+    },
+    {
+      id: 54,
+      image: '/assets/ad54.jpg',
+      link: 'https://example.com/ad54',
+      altText: 'Find the perfect pair of shoes for any occasion.'
+    },
+    {
+      id: 55,
+      image: '/assets/ad55.jpg',
+      link: 'https://example.com/ad55',
+      altText: 'Learn how to start your own business with our online courses and resources.'
+    },
+    {
+      id: 56,
+      image: '/assets/ad56.jpg',
+      link: 'https://example.com/ad56',
+      altText: 'Get expert advice on how to manage your personal finances.'
+    },
+    {
+      id: 57,
+      image: '/assets/ad57.jpg',
+      link: 'https://example.com/ad57',
+      altText: 'Discover the best hiking trails in your area.'
+    },
+    {
+      id: 58,
+      image: '/assets/ad58.jpg',
+      link: 'https://example.com/ad58',
+      altText: 'Learn about the history of space exploration.'
+    },
+    {
+      id: 59,
+      image: '/assets/ad59.jpg',
+      link: 'https://example.com/ad59',
+      altText: 'Support organizations that are working to end poverty.'
+    },
+    {
+      id: 60,
+      image: '/assets/ad60.jpg',
+      link: 'https://example.com/ad60',
+      altText: 'Find the perfect hat for any occasion.'
+    },
+    {
+      id: 61,
+      image: '/assets/ad61.jpg',
+      link: 'https://example.com/ad61',
+      altText: 'Learn how to write a novel with our online courses and workshops.'
+    },
+    {
+      id: 62,
+      image: '/assets/ad62.jpg',
+      link: 'https://example.com/ad62',
+      altText: 'Get expert advice on how to improve your home'
+    },
+    {
+      id: 63,
+      image: '/assets/ad63.jpg',
+      link: 'https://example.com/ad63',
+      altText: 'Discover the best camping spots in your area.'
+    },
+    {
+      id: 64,
+      image: '/assets/ad64.jpg',
+      link: 'https://example.com/ad64',
+      altText: 'Learn about the history of aviation.'
+    },
+    {
+      id: 65,
+      image: '/assets/ad65.jpg',
+      link: 'https://example.com/ad65',
+      altText: 'Support organizations that are working to protect endangered species.'
+    },
+    {
+      id: 66,
+      image: '/assets/ad66.jpg',
+      link: 'https://example.com/ad66',
+      altText: 'Find the perfect scarf for any occasion.'
+    },
+    {
+      id: 67,
+      image: '/assets/ad67.jpg',
+      link: 'https://example.com/ad67',
+      altText: 'Learn how to paint with our online courses and workshops.'
+    },
+    {
+      id: 68,
+      image: '/assets/ad68.jpg',
+      link: 'https://example.com/ad68',
+      altText: 'Get expert advice on how to landscape your yard.'
+    },
+    {
+      id: 69,
+      image: '/assets/ad69.jpg',
+      link: 'https://example.com/ad69',
+      altText: 'Discover the best fishing spots in your area.'
+    },
+    {
+      id: 70,
+      image: '/assets/ad70.jpg',
+      link: 'https://example.com/ad70',
+      altText: 'Learn about the history of the internet.'
+    },
+    {
+      id: 71,
+      image: '/assets/ad71.jpg',
+      link: 'https://example.com/ad71',
+      altText: 'Support organizations that are working to promote education.'
+    },
+    {
+      id: 72,
+      image: '/assets/ad72.jpg',
+      link: 'https://example.com/ad72',
+      altText: 'Find the perfect pair of gloves for any occasion.'
+    },
+    {
+      id: 73,
+      image: '/assets/ad73.jpg',
+      link: 'https://example.com/ad73',
+      altText: 'Learn how to sculpt with our online courses and workshops.'
+    },
+    {
+      id: 74,
+      image: '/assets/ad74.jpg',
+      link: 'https://example.com/ad74',
+      altText: 'Get expert advice on how to decorate your home for the holidays.'
+    },
+     {
+      id: 75,
+      image: '/assets/ad75.jpg',
+      link: 'https://example.com/ad75',
+      altText: 'Discover the best bird watching spots in your area.'
+    },
+    {
+      id: 76,
+      image: '/assets/ad76.jpg',
+      link: 'https://example.com/ad76',
+      altText: 'Learn about the history of photography.'
+    },
+    {
+      id: 77,
+      image: '/assets/ad77.jpg',
+      link: 'https://example.com/ad77',
+      altText: 'Support organizations that are working to provide clean water.'
+    },
+    {
+      id: 78,
+      image: '/assets/ad78.jpg',
+      link: 'https://example.com/ad78',
+      altText: 'Find the perfect belt for any occasion.'
+    },
+    {
+      id: 79,
+      image: '/assets/ad79.jpg',
+      link: 'https://example.com/ad79',
+      altText: 'Learn how to knit with our online courses and workshops.'
+    },
+    {
+      id: 80,
+      image: '/assets/ad80.jpg',
+      link: 'https://example.com/ad80',
+      altText: 'Get expert advice on how to organize your closet.'
+    },
+    {
+      id: 81,
+      image: '/assets/ad81.jpg',
+      link: 'https://example.com/ad81',
+      altText: 'Discover the best stargazing spots in your area.'
+    },
+    {
+      id: 82,
+      image: '/assets/ad82.jpg',
+      link: 'https://example.com/ad82',
+      altText: 'Learn about the history of film.'
+    },
+    {
+      id: 83,
+      image: '/assets/ad83.jpg',
+      link: 'https://example.com/ad83',
+      altText: 'Support organizations that are working to promote peace.'
+    },
+    {
+      id: 84,
+      image: '/assets/ad84.jpg',
+      link: 'https://example.com/ad84',
+      altText: 'Find the perfect tie for any occasion.'
+    },
+    {
+      id: 85,
+      image: '/assets/ad85.jpg',
+      link: 'https://example.com/ad85',
+      altText: 'Learn how to sew with our online courses and workshops.'
+    },
+    {
+      id: 86,
+      image: '/assets/ad86.jpg',
+      link: 'https://example.com/ad86',
+      altText: 'Get expert advice on how to declutter your home.'
+    },
+    {
+      id: 87,
+      image: '/assets/ad87.jpg',
+      link: 'https://example.com/ad87',
+      altText: 'Discover the best rock climbing spots in your area.'
+    },
+    {
+      id: 88,
+      image: '/assets/ad88.jpg',
+      link: 'https://example.com/ad88',
+      altText: 'Learn about the history of television.'
+    },
+    {
+      id: 89,
+      image: '/assets/ad89.jpg',
+      link: 'https://example.com/ad89',
+      altText: 'Support organizations that are working to protect human rights.'
+    },
+    {
+      id: 90,
+      image: '/assets/ad90.jpg',
+      link: 'https://example.com/ad90',
+      altText: 'Find the perfect wallet for any occasion.'
+    },
+    {
+      id: 91,
+      image: '/assets/ad91.jpg',
+      link: 'https://example.com/ad91',
+      altText: 'Learn how to code mobile apps with our online courses and workshops.'
+    },
+    {
+      id: 92,
+      image: '/assets/ad92.jpg',
+      link: 'https://example.com/ad92',
+      altText: 'Get expert advice on how to create a budget and save money.'
+    },
+    {
+      id: 93,
+      image: '/assets/ad93.jpg',
+      link: 'https://example.com/ad93',
+      altText: 'Discover the best kayaking spots in your area.'
+    },
+    {
+      id: 94,
+      image: '/assets/ad94.jpg',
+      link: 'https://example.com/ad94',
+      altText: 'Learn about the history of video games.'
+    },
+    {
+      id: 95,
+      image: '/assets/ad95.jpg',
+      link: 'https://example.com/ad95',
+      altText: 'Support organizations that are working to end hunger.'
+    },
+    {
+      id: 96,
+      image: '/assets/ad96.jpg',
+      link: 'https://example.com/ad96',
+      altText: 'Find the perfect backpack for any occasion.'
+    },
+    {
+      id: 97,
+      image: '/assets/ad97.jpg',
+      link: 'https://example.com/ad97',
+      altText: 'Learn how to design websites with our online courses and workshops.'
+    },
+    {
+      id: 98,
+      image: '/assets/ad98.jpg',
+      link: 'https://example.com/ad98',
+      altText: 'Get expert advice on how to invest in the stock market.'
+    },
+    {
+      id: 99,
+      image: '/assets/ad99.jpg',
+      link: 'https://example.com/ad99',
+      altText: 'Discover the best surfing spots in your area.'
+    },
+    {
+      id: 100,
+      image: '/assets/ad100.jpg',
+      link: 'https://example.com/ad100',
+      altText: 'Learn about the history of computers.'
     }
   ];
   
