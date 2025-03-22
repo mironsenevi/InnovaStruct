@@ -25,11 +25,11 @@ const ClientForm = () => {
     return formErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // Add a submit event handler
     e.preventDefault();
     const formErrors = validate();
     if (Object.keys(formErrors).length === 0) {
-      console.log('Form submitted successfully', formData);
+      console.log('Form submitted successfully', formData); // Log the form data
       // Handle form submission (e.g., send data to the server)
     } else {
       setErrors(formErrors);
