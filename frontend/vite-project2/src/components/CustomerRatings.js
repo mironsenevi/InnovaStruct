@@ -10,6 +10,7 @@ const CustomerRatings = () => {
       setNewRating(0);
     } else {
       alert('Please enter a rating between 1 and 5.');
+      alert('Please enter a rating between 1 and 5.');
     }
   };
 
