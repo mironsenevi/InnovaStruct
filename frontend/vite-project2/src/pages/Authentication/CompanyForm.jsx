@@ -66,11 +66,11 @@ const ClientForm = () => {
             type="text"
             name="phone"
             value={formData.phone}
-            onChange={handleChange}
+            onChange={handleChange} // Add an onChange event handler
           />
           {errors.phone && <span>{errors.phone}</span>}
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button> // Add a submit button
       </form>
     </div>
   );
