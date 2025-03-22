@@ -10,9 +10,6 @@ const CustomerRatings = () => {
       setNewRating(0);
     } else {
       alert('Please enter a rating between 1 and 5.');
-      alert('Please enter a rating between 1 and 5.');
-      alert('Please enter a rating between 1 and 5.');
-      alert('Please enter a rating between 1 and 5.');
     }
   };
 
@@ -20,17 +17,22 @@ const CustomerRatings = () => {
     ? (ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length).toFixed(1)
     : 0;
 
+  const highestRating = Math.max(...ratings);
+  const lowestRating = Math.min(...ratings);
+
   return (
     <div>
       <h2>Customer Ratings</h2>
       <p>Average Rating: {averageRating} / 5</p>
+      <p>Highest Rating: {highestRating} / 5</p>
+      <p>Lowest Rating: {lowestRating} / 5</p>
       <ul>
         {ratings.map((rating, index) => (
           <li key={index}>Rating: {rating} / 5</li>
         ))}
       </ul>
       <div>
-        <h3>Submit Your Rating here and see ten</h3>
+        <h3>Submit Your Rating</h3>
         <input
           type="number"
           value={newRating}
@@ -45,4 +47,3 @@ const CustomerRatings = () => {
 };
 
 export default CustomerRatings;
-
