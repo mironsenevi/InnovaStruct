@@ -48,7 +48,7 @@ const ClientForm = () => {
             value={formData.name}
             onChange={handleChange}
           />
-          {errors.name && <span>{errors.name}</span>}
+          {errors.name && <span>{errors.name}</span>} // Display an error message
         </div>
         <div>
           <label>Email:</label>
