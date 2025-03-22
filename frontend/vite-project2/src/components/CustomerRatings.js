@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 const CustomerRatings = () => {
-  const [ratings, setRatings] = useState([5, 4, 3, 5, 4]); // Example initial ratings
+  const defaultRatings = [5, 4, 3, 5, 4]; // Default initial ratings
+  const [ratings, setRatings] = useState(defaultRatings);
   const [newRating, setNewRating] = useState(0);
 
   const handleRatingSubmit = () => {
@@ -11,6 +12,10 @@ const CustomerRatings = () => {
     } else {
       alert('Please enter a rating between 1 and 5.');
     }
+  };
+
+  const handleResetRatings = () => {
+    setRatings(defaultRatings);
   };
 
   const averageRating = ratings.length
@@ -58,19 +63,11 @@ const CustomerRatings = () => {
           ))}
         </ul>
       </div>
+      <div>
+        <button onClick={handleResetRatings}>Reset Ratings</button>
+      </div>
     </div>
   );
-
-
-
-
-
-
-
-
-
-
-  
 };
 
 export default CustomerRatings;
