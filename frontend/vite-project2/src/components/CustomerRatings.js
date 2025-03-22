@@ -27,7 +27,7 @@ const CustomerRatings = () => {
         ))}
       </ul>
       <div>
-        <h3>Submit Your Rating here</h3>
+        <h3>Submit Your Rating here and see ten</h3>
         <input
           type="number"
           value={newRating}
