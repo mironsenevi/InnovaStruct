@@ -20,6 +20,12 @@ const CustomerRatings = () => {
   const highestRating = Math.max(...ratings);
   const lowestRating = Math.min(...ratings);
 
+  // Calculate rating distribution
+  const ratingDistribution = [1, 2, 3, 4, 5].map((rating) => ({
+    rating,
+    count: ratings.filter((r) => r === rating).length,
+  }));
+
   return (
     <div>
       <h2>Customer Ratings</h2>
@@ -41,6 +47,16 @@ const CustomerRatings = () => {
           max="5"
         />
         <button onClick={handleRatingSubmit}>Submit</button>
+      </div>
+      <div>
+        <h3>Rating Distribution</h3>
+        <ul>
+          {ratingDistribution.map(({ rating, count }) => (
+            <li key={rating}>
+              {rating} Star: {count} {count === 1 ? 'vote' : 'votes'}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
