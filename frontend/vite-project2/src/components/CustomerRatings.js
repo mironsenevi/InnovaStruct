@@ -60,6 +60,17 @@ const CustomerRatings = () => {
       </div>
     </div>
   );
+
+
+
+
+
+
+
+
+
+
+  
 };
 
 export default CustomerRatings;
