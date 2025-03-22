@@ -1,11 +1,9 @@
 package com.innovastruct.InnovaStruct.services;
 
-
-
-import com.innovastruct.InnovaStruct.models.Company ;
-import com.innovastruct.InnovaStruct.models.Project ;
-import com.innovastruct.InnovaStruct.models.Certification ;
-import com.innovastruct.InnovaStruct.repositories.CompanyRepository ;
+import com.innovastruct.InnovaStruct.models.Company;
+import com.innovastruct.InnovaStruct.models.Project;
+import com.innovastruct.InnovaStruct.models.Certification;
+import com.innovastruct.InnovaStruct.repositories.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,91 +23,93 @@ public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
-    private final String UPLOAD_DIRECTORY = "uploads"; // Directory to store uploaded files (local for now)
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // For parsing date strings
+    private final String UPLOAD_DIRECTORY = "uploads"; // Directory to store uploaded files
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public Company createCompany(Company company,
-                                 MultipartFile[] projectImageFiles, // Array to match multiple files per project from form
-                                 MultipartFile[] certificateImageFiles) throws ParseException, IOException { // Assuming single certificate image per certification for now
+                                 MultipartFile[] projectImageFiles,
+                                 MultipartFile[] certificateImageFiles) throws ParseException, IOException {
 
-        // 1. Handle Project Images Upload and Update Project Image URLs
+        // Create main upload directory if it doesn't exist
+        Path uploadPath = Paths.get(UPLOAD_DIRECTORY);
+        if (!Files.exists(uploadPath)) {
+            Files.createDirectories(uploadPath);
+        }
+
+        // 1. Handle Project Images Upload
         if (projectImageFiles != null && projectImageFiles.length > 0) {
+            int imageIndex = 0;
             List<Project> projects = company.getPastProjects();
-            if (projects != null) {
-                for (int projectIndex = 0; projectIndex < projects.size(); projectIndex++) {
-                    Project project = projects.get(projectIndex);
-                    List<String> imageUrls = new ArrayList<>();
-                    if (projectImageFiles.length > projectIndex && projectImageFiles[projectIndex] != null && projectImageFiles[projectIndex].getSize() > 0) {
-                        final int currentIndex = projectIndex; // Create a final variable for use in lambda
-                        MultipartFile[] filesForProject = projectImageFiles[currentIndex].getOriginalFilename().split(",").length > 1
-                                ? Arrays.stream(projectImageFiles[currentIndex].getOriginalFilename().split(","))
-                                .map(filename -> projectImageFiles[currentIndex])
-                                .toArray(MultipartFile[]::new)
-                                : new MultipartFile[]{projectImageFiles[currentIndex]};
 
-                        if (filesForProject != null) {
-                            for (MultipartFile file : filesForProject) {
-                                if (file != null && !file.isEmpty()) {
-                                    String imageUrl = storeFileAndGetUrl(file, "project-images");
-                                    imageUrls.add(imageUrl);
-                                }
-                            }
+            if (projects != null) {
+                for (Project project : projects) {
+                    List<String> imageUrls = new ArrayList<>();
+
+                    // Each project can have multiple images, process them in order
+                    int projectImageCount = project.getImages() != null ? project.getImages().size() : 0;
+
+                    for (int i = 0; i < projectImageCount && imageIndex < projectImageFiles.length; i++, imageIndex++) {
+                        MultipartFile file = projectImageFiles[imageIndex];
+                        if (file != null && !file.isEmpty()) {
+                            String imageUrl = storeFileAndGetUrl(file, "project-images");
+                            imageUrls.add(imageUrl);
                         }
                     }
+
                     project.setImages(imageUrls);
-                    projects.set(projectIndex, project);
                 }
-                company.setPastProjects(projects);
             }
         }
 
-
-        // 2. Handle Certificate Images Upload and Update Certification Image URLs
+        // 2. Handle Certificate Images Upload
         if (certificateImageFiles != null && certificateImageFiles.length > 0) {
             List<Certification> certifications = company.getCertifications();
             if (certifications != null) {
-                for (int i = 0; i < certifications.size(); i++) {
-                    Certification certification = certifications.get(i);
-                    if (certificateImageFiles.length > i && certificateImageFiles[i] != null && !certificateImageFiles[i].isEmpty()) {
-                        String imageUrl = storeFileAndGetUrl(certificateImageFiles[i], "certificate-images");
-                        certification.setImageUrl(imageUrl);
+                for (int i = 0; i < certifications.size() && i < certificateImageFiles.length; i++) {
+                    MultipartFile file = certificateImageFiles[i];
+                    if (file != null && !file.isEmpty()) {
+                        String imageUrl = storeFileAndGetUrl(file, "certificate-images");
+                        certifications.get(i).setImageUrl(imageUrl);
                     }
-                    // Parse and set Date objects for issueDate and expiryDate
+
+                    // Parse dates for certifications
+                    Certification certification = certifications.get(i);
                     if (certification.getIssueDate() != null) {
-                        certification.setIssueDate(dateFormat.parse(dateFormat.format(certification.getIssueDate()))); // Parse and format to handle date only
+                        certification.setIssueDate(dateFormat.parse(dateFormat.format(certification.getIssueDate())));
                     }
                     if (certification.getExpiryDate() != null) {
                         certification.setExpiryDate(dateFormat.parse(dateFormat.format(certification.getExpiryDate())));
                     }
-                    certifications.set(i, certification); // Update certification in the list
                 }
-                company.setCertifications(certifications); // Update company's certification list
             }
         }
-        // 3. Create Contact Information object from form data
-        if (company.getContactInformation() == null) {
-            company.setContactInformation(new com.innovastruct.InnovaStruct.models.ContactInformation());
-        }
-        // Contact information is already set in controller, no need to set here again unless needed.
 
         return companyRepository.save(company);
     }
 
-
-    // Method to store file locally and return URL (for demonstration - replace with cloud storage in production)
+    // Method to store file locally and return URL
     private String storeFileAndGetUrl(MultipartFile file, String subDirectory) throws IOException {
         Path uploadPath = Paths.get(UPLOAD_DIRECTORY, subDirectory);
         if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
         }
-        String filename = UUID.randomUUID().toString() + "_" + file.getOriginalFilename(); // Unique filename
+
+        // Generate a unique filename to prevent collisions
+        String originalFilename = file.getOriginalFilename();
+        String fileExtension = "";
+        if (originalFilename != null && originalFilename.contains(".")) {
+            fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
+        }
+
+        String filename = UUID.randomUUID().toString() + fileExtension;
         Path filePath = uploadPath.resolve(filename);
+
         Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
-        return "/" + UPLOAD_DIRECTORY + "/" + subDirectory + "/" + filename; // Return relative URL - adjust as needed for your frontend and file serving setup
+
+        // Return URL path that matches the resource handler configuration
+        return "/" + UPLOAD_DIRECTORY + "/" + subDirectory + "/" + filename;
     }
 
-
-    // ... other service methods (getCompanyById, getAllCompanies, updateCompany, deleteCompany, etc.) remain similar ...
     public Optional<Company> getCompanyById(String id) {
         return companyRepository.findById(id);
     }
@@ -122,7 +122,8 @@ public class CompanyService {
         Optional<Company> existingCompanyOptional = companyRepository.findById(id);
         if (existingCompanyOptional.isPresent()) {
             Company existingCompany = existingCompanyOptional.get();
-            // Update fields you want to allow updating
+
+            // Update fields
             existingCompany.setCompanyName(updatedCompany.getCompanyName());
             existingCompany.setLicenseNumber(updatedCompany.getLicenseNumber());
             existingCompany.setShortDescription(updatedCompany.getShortDescription());
