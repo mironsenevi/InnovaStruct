@@ -32,7 +32,7 @@ const ClientForm = () => {
       console.log('Form submitted successfully', formData);
       // Handle form submission (e.g., send data to the server)
     } else {
-      setErrors(formErrors);
+      setErrors(formErrors); //errors will be displayed in the form
     }
   };
 
@@ -68,7 +68,7 @@ const ClientForm = () => {
             value={formData.phone}
             onChange={handleChange}
           />
-          {errors.phone && <span>{errors.phone}</span>}
+          {errors.phone && <span>{errors.phone}</span>} //error message will be displayed here
         </div>
         <button type="submit">Submit</button>
       </form>
