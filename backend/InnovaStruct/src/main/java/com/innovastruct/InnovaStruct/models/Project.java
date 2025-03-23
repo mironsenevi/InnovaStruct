@@ -1,14 +1,61 @@
 package com.innovastruct.InnovaStruct.models;
 
 
-import lombok.Data;
-import java.util.List;
-
-@Data
 public class Project {
-    private String name; // renamed from projectName to match form field
+    private String id;
+    private String image;
+    private String title;
     private String description;
-    private Integer completionYear; // new field from form, Integer type
-    private List<String> images; // list of image URLs (after upload)
-    // removed startDate, endDate, projectLocation, clientName as they are not in the form
+    private int year;
+
+    public Project() {
+    }
+
+    public Project(String id, String image, String title, String description, int year) {
+        this.id = id;
+        this.image = image;
+        this.title = title;
+        this.description = description;
+        this.year = year;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
 }
