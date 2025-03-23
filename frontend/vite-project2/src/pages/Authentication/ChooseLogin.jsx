@@ -18,7 +18,12 @@ const ChooseLogin = () => {
           Company Login
         </Link>  
       </div>
-      <div></div>
+      <div className="mt-6">
+        <p className="text-gray-600">
+          Don't have an account? {" "}
+          <link to="stylesheet" href="" />
+        </p>
+      </div>
     </div>
     
   );
