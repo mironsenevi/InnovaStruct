@@ -16,9 +16,11 @@ const ChooseLogin = () => {
           className="block px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600"
         >
           Company Login
-        </Link>
+        </Link>  
       </div>
+      <div></div>
     </div>
+    
   );
 };
 
