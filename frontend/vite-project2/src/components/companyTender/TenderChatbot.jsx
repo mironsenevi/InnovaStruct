@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, Send, X, Minimize2, Building, Home } from 'lucide-react';
 import PropTypes from 'prop-types';
 import './tenderChatbot.css';
