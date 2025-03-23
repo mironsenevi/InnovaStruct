@@ -3,21 +3,32 @@ package com.innovastruct.InnovaStruct.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Represents a bid submitted by a company for a tender.
+ * This class is mapped to the "bids" collection in MongoDB.
+ */
 @Document(collection = "bids")
 public class Bid {
-    @Id
+    
+    @Id // Marks this field as the primary key in MongoDB
     private String id;
-    private String tenderId;
-    private String companyId;
-    private String companyName;
-    private double amount;
-    private String proposedDeadline;
-    private String message;
-    private String status; // "pending", "accepted", "rejected"
-    private String createdAt;
 
+    private String tenderId; // ID of the tender this bid is associated with
+    private String companyId; // ID of the company that placed the bid
+    private String companyName; // Name of the company placing the bid
+    private double amount; // Bid amount proposed by the company
+    private String proposedDeadline; // Proposed completion date for the project
+    private String message; // Additional message from the bidder
+    private String status; // Status of the bid: "pending", "accepted", "rejected"
+    private String createdAt; // Timestamp when the bid was created
+
+    /**
+     * Default constructor.
+     */
     public Bid() {
     }
+
+    // Getter and Setter methods for accessing and modifying bid attributes.
 
     public String getId() {
         return id;
