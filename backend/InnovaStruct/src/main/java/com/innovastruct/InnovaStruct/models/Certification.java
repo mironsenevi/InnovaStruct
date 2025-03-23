@@ -1,27 +1,32 @@
 package com.innovastruct.InnovaStruct.models;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+/**
+ * Represents a certification awarded to a company.
+ * This class is mapped to the "certifications" collection in MongoDB.
+ */
 @Document(collection = "certifications")
 public class Certification {
-    @Id
+
+    @Id // Marks this field as the primary key in MongoDB
     private String id;
 
-    private String name;
-    private String organization;
-    private String issueDate;
-    private String expiryDate;
-    private String imageUrl;
+    private String name; // Name of the certification
+    private String organization; // Issuing organization
+    private String issueDate; // Date the certification was issued
+    private String expiryDate; // Expiry date of the certification (if applicable)
+    private String imageUrl; // URL of the certification image or document
 
-    @DBRef
-    @JsonBackReference
+    @DBRef // Establishes a reference to the Company entity in MongoDB
+    @JsonBackReference // Prevents infinite recursion during JSON serialization
     private Company company;
 
     // Getters and Setters
+
     public String getId() {
         return id;
     }
