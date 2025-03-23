@@ -2,13 +2,23 @@ package com.innovastruct.InnovaStruct.models;
 
 import java.util.List;
 
+/**
+ * Represents the track record of a company, including years of experience,
+ * notable projects, and client satisfaction.
+ */
 public class TrackRecord {
-    private int yearsOfExperience;
-    private List<NotableProject> notableProjects;
-    private ClientSatisfaction clientSatisfaction;
+    
+    private int yearsOfExperience; // Number of years the company has been in operation
+    private List<NotableProject> notableProjects; // List of notable projects completed by the company
+    private ClientSatisfaction clientSatisfaction; // Client satisfaction data (ratings, feedback, challenges)
 
+    /**
+     * Default constructor.
+     */
     public TrackRecord() {
     }
+
+    // Getter and Setter methods for the fields
 
     public int getYearsOfExperience() {
         return yearsOfExperience;
@@ -34,13 +44,22 @@ public class TrackRecord {
         this.clientSatisfaction = clientSatisfaction;
     }
 
+    /**
+     * Represents a notable project undertaken by the company.
+     */
     public static class NotableProject {
-        private String title;
-        private String image;
-        private String description;
+        
+        private String title; // Title of the project
+        private String image; // URL or path to an image representing the project
+        private String description; // Description of the project
 
+        /**
+         * Default constructor.
+         */
         public NotableProject() {
         }
+
+        // Getter and Setter methods for the fields
 
         public String getTitle() {
             return title;
@@ -67,13 +86,22 @@ public class TrackRecord {
         }
     }
 
+    /**
+     * Represents client satisfaction metrics, including ratings, feedback, and challenges.
+     */
     public static class ClientSatisfaction {
-        private double averageRating;
-        private List<String> positiveFeedback;
-        private List<String> challengesFaced;
+        
+        private double averageRating; // Average rating given by clients (out of 5)
+        private List<String> positiveFeedback; // List of positive feedback from clients
+        private List<String> challengesFaced; // List of challenges faced during projects
 
+        /**
+         * Default constructor.
+         */
         public ClientSatisfaction() {
         }
+
+        // Getter and Setter methods for the fields
 
         public double getAverageRating() {
             return averageRating;
