@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 import {
   Home,
   Building,
-  
   FileText,
   Settings,
   LogOut,
@@ -13,6 +12,8 @@ import {
   Briefcase,
   LineChart,
 } from "lucide-react";
+import userService from '../services/userService';
+import companyService from '../services/companyService';
 
 // Helper component for nav items with PropTypes
 const NavItem = ({ href, icon, text, isMinimized }) => {
@@ -24,18 +25,18 @@ const NavItem = ({ href, icon, text, isMinimized }) => {
       <Link
         to={href}
         className={`btn ${isMinimized ? 'btn-square' : 'btn-wide'} border-none justify-start shadow-none transition-colors ${
-          isActive 
-            ? 'bg-white' 
+          isActive
+            ? 'bg-white'
             : 'bg-transparent hover:bg-white/90 group'
         }`}
       >
         <div className={`flex items-center gap-3 ${
-          isActive 
-            ? 'text-yellow-500' 
+          isActive
+            ? 'text-yellow-500'
             : 'text-white group-hover:text-yellow-500'
         }`}>
-          {React.cloneElement(icon, { 
-            className: `w-5 h-5 ${isActive ? 'text-yellow-500' : ''}` 
+          {React.cloneElement(icon, {
+            className: `w-5 h-5 ${isActive ? 'text-yellow-500' : ''}`
           })}
           {!isMinimized && <span>{text}</span>}
         </div>
@@ -54,6 +55,48 @@ NavItem.propTypes = {
 
 function CompanyNavbar() {
   const [isMinimized, setIsMinimized] = useState(false);
+  const [companyName, setCompanyName] = useState('');
+
+  useEffect(() => {
+    // Get current user's name
+    const currentUser = userService.getCurrentUser();
+    if (currentUser) {
+      // Fetch company data to get the company name
+      const fetchCompanyData = async () => {
+        try {
+          const userDetails = await userService.getUserById(currentUser.id);
+          if (userDetails && userDetails.companyId) {
+            const companyData = await companyService.getCompanyById(userDetails.companyId);
+            if (companyData) {
+              setCompanyName(companyData.name);
+            }
+          }
+        } catch (error) {
+          console.error('Error fetching company data:', error);
+        }
+      };
+      fetchCompanyData();
+    }
+
+    // Handle responsive behavior
+    const handleResize = () => {
+      if (window.innerWidth < 768 && !isMinimized) {
+        setIsMinimized(true);
+        window.dispatchEvent(new CustomEvent('sidebarStateChange', { detail: true }));
+      }
+    };
+
+    // Set initial responsive state
+    handleResize();
+
+    // Add event listeners
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMinimized]);
 
   const toggleMinimize = () => {
     setIsMinimized(!isMinimized);
@@ -65,10 +108,10 @@ function CompanyNavbar() {
     <div className={`fixed h-screen bg-yellow-400 text-white shadow-lg flex flex-col transition-all duration-300 z-50 ${isMinimized ? 'w-20' : 'w-80'}`}>
       <div className="px-6 py-4 border-b border-yellow-300 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <img src="/assets/Logo.png" alt="InnovaStruct Logo" className="w-9 h-10.5 -translate-y-0.5" /> 
+          <img src="/assets/Logo.png" alt="Logo" className="w-9 h-10.5 -translate-y-0.5" />
           {!isMinimized && <h2 className="text-2xl font-bold">InnovaStruct</h2>}
         </div>
-        <button 
+        <button
           onClick={toggleMinimize}
           className="p-2 hover:bg-white hover:text-yellow-400 rounded-full transition-colors"
           aria-label={isMinimized ? "Expand sidebar" : "Minimize sidebar"}
@@ -87,13 +130,13 @@ function CompanyNavbar() {
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-yellow-300 rounded-full"></div>
             </div>
             <div>
-              <p className="text-sm font-medium text-yellow-900">Lanka Constructions</p>
+              <p className="text-sm font-medium text-yellow-900">{companyName}</p>
               <p className="text-xs text-yellow-800/70">Company Account</p>
             </div>
           </div>
         </div>
       )}
-        
+
       <ul className="flex flex-col p-4 space-y-4 flex-grow">
         <NavItem href="/company/home" icon={<Home />} text="Home" isMinimized={isMinimized} />
         <NavItem href="/company/portfolio" icon={<Building />} text="Portfolio" isMinimized={isMinimized} />
@@ -103,8 +146,8 @@ function CompanyNavbar() {
       </ul>
 
       <div className="p-4 mt-auto border-t border-yellow-300">
-        <Link 
-          to="/logout" 
+        <Link
+          to="/type"
           className={`btn ${isMinimized ? 'btn-square' : 'btn-wide'} bg-white text-red-600 hover:bg-red-50 hover:text-red-700 flex items-center justify-center gap-3 transition-colors`}
         >
           <LogOut className="w-5 h-5" />

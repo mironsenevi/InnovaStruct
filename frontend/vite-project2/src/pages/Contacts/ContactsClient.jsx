@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Search, MoreVertical, CheckCheck, Send } from "lucide-react";
 import ClientNavbar from '../../components/ClientNavbar';
 

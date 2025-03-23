@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed5ae647-64d4-47a3-aa66-c060f74a8bc0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/innovastruct/InnovaStruct/InnovaStructApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/innovastruct/InnovaStruct/InnovaStructApplicationTests.java" afterDir="false" />
+    <list default="true" id="2ff9f00c-cf69-405f-b9a5-d5ab78b9c0bc" name="Changes" comment="create JwtTokenProvider class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovastruct/InnovaStruct/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovastruct/InnovaStruct/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,66 +17,41 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2tesHTOT8RIajUmavF3onWiBYzT" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2ujQcelER0vmepMsf0YCnGRKokD" />
   <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.InnovaStructApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.InnovastructApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;portfolio&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IIT/2nd year/SDGP/cw2/InnovaStruct/backend/Innovastruct&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "portfolio",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="InnovaStructApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="InnovaStruct" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.innovastruct.InnovaStruct.InnovaStructApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InnovaStructApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="Innovastruct" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.innovastruct.InnovaStruct.InnovaStructApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,33 +69,102 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ed5ae647-64d4-47a3-aa66-c060f74a8bc0" name="Changes" comment="" />
-      <created>1740723788793</created>
+      <changelist id="2ff9f00c-cf69-405f-b9a5-d5ab78b9c0bc" name="Changes" comment="" />
+      <created>1742759587484</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1740723788793</updated>
-      <workItem from="1740723792733" duration="4042000" />
-      <workItem from="1740822212092" duration="465000" />
-      <workItem from="1740823325502" duration="3287000" />
-      <workItem from="1740893369390" duration="3764000" />
-      <workItem from="1740930193030" duration="281000" />
-      <workItem from="1740930498274" duration="66000" />
-      <workItem from="1740930613627" duration="307000" />
-      <workItem from="1740930951973" duration="260000" />
-      <workItem from="1740931234604" duration="1409000" />
-      <workItem from="1740932691621" duration="208000" />
-      <workItem from="1740932921049" duration="1968000" />
-      <workItem from="1740984178708" duration="7682000" />
-      <workItem from="1741174258570" duration="3578000" />
-      <workItem from="1741178154932" duration="5259000" />
-      <workItem from="1741266376647" duration="2890000" />
-      <workItem from="1741325974518" duration="3150000" />
-      <workItem from="1742279855156" duration="1937000" />
-      <workItem from="1742398789067" duration="1365000" />
+      <updated>1742759587484</updated>
+      <workItem from="1742759590604" duration="924000" />
     </task>
+    <task id="LOCAL-00001" summary="create BidRepository interface">
+      <option name="closed" value="true" />
+      <created>1742759877017</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742759877017</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create CertificationRepositoroy interface">
+      <option name="closed" value="true" />
+      <created>1742760004654</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760004654</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create TenderLocationRepository interface">
+      <option name="closed" value="true" />
+      <created>1742760079942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760079942</updated>
+    </task>
+    <task id="LOCAL-00004" summary="create TenderRepository interface">
+      <option name="closed" value="true" />
+      <created>1742760135238</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760135238</updated>
+    </task>
+    <task id="LOCAL-00005" summary="create UserRepository interface">
+      <option name="closed" value="true" />
+      <created>1742760182911</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760182911</updated>
+    </task>
+    <task id="LOCAL-00006" summary="create UserSettingsRepository interface">
+      <option name="closed" value="true" />
+      <created>1742760234027</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760234027</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create CustomUserDetailsService class">
+      <option name="closed" value="true" />
+      <created>1742760389636</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760389636</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create JwtAuthenticationFilter class">
+      <option name="closed" value="true" />
+      <created>1742760442296</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760442296</updated>
+    </task>
+    <task id="LOCAL-00009" summary="create JwtTokenProvider class">
+      <option name="closed" value="true" />
+      <created>1742760496563</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742760496563</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'portfolio' of https://github.com/miro:wqnsenevi/InnovaStruct into portfolio&#10;:wq# the commit." />
+    <MESSAGE value="create BidRepository interface" />
+    <MESSAGE value="create CertificationRepositoroy interface" />
+    <MESSAGE value="create TenderLocationRepository interface" />
+    <MESSAGE value="create TenderRepository interface" />
+    <MESSAGE value="create UserRepository interface" />
+    <MESSAGE value="create UserSettingsRepository interface" />
+    <MESSAGE value="create CustomUserDetailsService class" />
+    <MESSAGE value="create JwtAuthenticationFilter class" />
+    <MESSAGE value="create JwtTokenProvider class" />
+    <option name="LAST_COMMIT_MESSAGE" value="create JwtTokenProvider class" />
   </component>
 </project>
