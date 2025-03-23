@@ -21,7 +21,8 @@ const ChooseLogin = () => {
       <div className="mt-6">
         <p className="text-gray-600">
           Don't have an account? {" "}
-          <link to="stylesheet" href="" />
+          <link to="/register"
+          className="text-blue-600" href="" />
         </p>
       </div>
     </div>
