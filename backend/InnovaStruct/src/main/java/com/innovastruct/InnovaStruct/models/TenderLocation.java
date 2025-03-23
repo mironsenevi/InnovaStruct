@@ -4,27 +4,44 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
+/**
+ * Represents the location of a tender, including its district, coordinates, active tenders, and total value.
+ * This class is mapped to the "tender_locations" collection in MongoDB.
+ */
 @Document(collection = "tender_locations")
 public class TenderLocation {
+    
     @Id
-    private String id;
-    private String district;
-    private Coordinates coordinates;
-    private int tenderCount;
-    private List<ActiveTender> activeTenders;
-    private double totalValue;
+    private String id;  // Unique identifier for the tender location
+    private String district;  // The district where the tender is located
+    private Coordinates coordinates;  // The geographic coordinates (latitude and longitude) of the tender location
+    private int tenderCount;  // The number of tenders available in this location
+    private List<ActiveTender> activeTenders;  // A list of active tenders in this location
+    private double totalValue;  // The total value of the tenders in this location
 
+    /**
+     * Represents the geographic coordinates of the tender location.
+     */
     public static class Coordinates {
-        private double lat;
-        private double lng;
+        
+        private double lat;  // Latitude of the location
+        private double lng;  // Longitude of the location
 
+        /**
+         * Default constructor for Coordinates.
+         */
         public Coordinates() {
         }
 
+        /**
+         * Constructor to initialize the coordinates with latitude and longitude.
+         */
         public Coordinates(double lat, double lng) {
             this.lat = lat;
             this.lng = lng;
         }
+
+        // Getter and Setter methods for the coordinates
 
         public double getLat() {
             return lat;
@@ -43,19 +60,31 @@ public class TenderLocation {
         }
     }
 
+    /**
+     * Represents an active tender in a given location, containing the tender's ID, title, and budget.
+     */
     public static class ActiveTender {
-        private String id;
-        private String title;
-        private double budget;
+        
+        private String id;  // Unique identifier for the active tender
+        private String title;  // Title or name of the active tender
+        private double budget;  // Budget allocated for the tender
 
+        /**
+         * Default constructor for ActiveTender.
+         */
         public ActiveTender() {
         }
 
+        /**
+         * Constructor to initialize an active tender with its ID, title, and budget.
+         */
         public ActiveTender(String id, String title, double budget) {
             this.id = id;
             this.title = title;
             this.budget = budget;
         }
+
+        // Getter and Setter methods for the active tender details
 
         public String getId() {
             return id;
@@ -82,8 +111,13 @@ public class TenderLocation {
         }
     }
 
+    /**
+     * Default constructor for TenderLocation.
+     */
     public TenderLocation() {
     }
+
+    // Getter and Setter methods for the tender location details
 
     public String getId() {
         return id;
