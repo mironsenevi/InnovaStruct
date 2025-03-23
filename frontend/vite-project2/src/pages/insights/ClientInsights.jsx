@@ -8,7 +8,6 @@ import ProjectTimeline from '../../components/Insights/ProjectTimeline';
 const ClientInsights = () => {
   const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
 
-  
   useEffect(() => {
     const handleSidebarStateChange = (event) => {
       setIsSidebarMinimized(event.detail);

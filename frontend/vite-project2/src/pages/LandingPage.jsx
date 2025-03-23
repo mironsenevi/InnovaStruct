@@ -1,4 +1,3 @@
-
 import Navbar from "../components/LandingPageComponents/Navbar";
 
 import PricingCards from "../components/LandingPageComponents/PricingCards";

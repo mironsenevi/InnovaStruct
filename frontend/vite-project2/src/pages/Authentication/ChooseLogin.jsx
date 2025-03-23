@@ -16,19 +16,17 @@ const ChooseLogin = () => {
           className="block px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600"
         >
           Company Login
-        </Link>  
+        </Link>
       </div>
       <div className="mt-6">
         <p className="text-gray-600">
-          Don't have an account? {" "}
-          <link to="/register"
-          className="text-blue-600 hover:underline">
+          Don't have an account?{" "}
+          <Link to="/register" className="text-blue-600 hover:underline">
             Register Now
-          </link>  
+          </Link>
         </p>
       </div>
     </div>
-    
   );
 };
 
