@@ -22,7 +22,9 @@ const ChooseLogin = () => {
         <p className="text-gray-600">
           Don't have an account? {" "}
           <link to="/register"
-          className="text-blue-600" href="" />
+          className="text-blue-600 hover:underline">
+            Register Now
+          </link>  
         </p>
       </div>
     </div>
