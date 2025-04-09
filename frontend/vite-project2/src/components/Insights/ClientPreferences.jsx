@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import analyticsService from '../../services/analyticsService';
+
 import PropTypes from 'prop-types';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { PieChart as PieChartIcon, Users, TrendingUp } from 'lucide-react';
@@ -62,26 +61,11 @@ const preferenceItemType = PropTypes.shape({
 });
 
 const ClientPreferences = () => {
-  const [preferenceData, setPreferenceData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchClientPreferences = async () => {
-      try {
-        setLoading(true);
-        const response = await analyticsService.getClientPreferences();
-        setPreferenceData(response.preferenceData || []);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching client preferences:', err);
-        setError('Failed to load client preferences data');
-        setLoading(false);
-      }
-    };
-
-    fetchClientPreferences();
-  }, []);
+  const preferenceData = [
+    { name: 'Residential', value: 60, count: 120, trend: '+15%' },
+    { name: 'Commercial', value: 30, count: 60, trend: '+8%' },
+    { name: 'Industrial', value: 10, count: 20, trend: '+5%' }
+  ];
 
   const COLORS = ['#EAB308', '#F59E0B', '#D97706'];
 
@@ -131,8 +115,8 @@ const ClientPreferences = () => {
                 dataKey="value"
               >
                 {preferenceData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
+                  <Cell 
+                    key={`cell-${index}`} 
                     fill={COLORS[index % COLORS.length]}
                     stroke="white"
                     strokeWidth={2}
@@ -140,8 +124,8 @@ const ClientPreferences = () => {
                 ))}
               </Pie>
               <Tooltip content={<CustomTooltip />} />
-              <Legend
-                verticalAlign="bottom"
+              <Legend 
+                verticalAlign="bottom" 
                 height={36}
                 formatter={(value) => <span className="text-gray-600">{value}</span>}
               />

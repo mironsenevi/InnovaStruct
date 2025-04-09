@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {
   Home,
   Building,
+ 
   FileText,
   Settings,
   LogOut,
@@ -12,7 +13,6 @@ import {
   User,
   LineChart,
 } from "lucide-react";
-import userService from '../services/userService';
 
 // Helper component for nav items with PropTypes
 const NavItem = ({ href, icon, text, isMinimized }) => {
@@ -24,18 +24,18 @@ const NavItem = ({ href, icon, text, isMinimized }) => {
       <Link
         to={href}
         className={`btn ${isMinimized ? 'btn-square' : 'btn-wide'} border-none justify-start shadow-none transition-colors ${
-          isActive
-            ? 'bg-white'
+          isActive 
+            ? 'bg-white' 
             : 'bg-transparent hover:bg-white/90 group'
         }`}
       >
         <div className={`flex items-center gap-3 ${
-          isActive
-            ? 'text-yellow-500'
+          isActive 
+            ? 'text-yellow-500' 
             : 'text-white group-hover:text-yellow-500'
         }`}>
-          {React.cloneElement(icon, {
-            className: `w-5 h-5 ${isActive ? 'text-yellow-500' : ''}`
+          {React.cloneElement(icon, { 
+            className: `w-5 h-5 ${isActive ? 'text-yellow-500' : ''}` 
           })}
           {!isMinimized && <span>{text}</span>}
         </div>
@@ -54,15 +54,8 @@ NavItem.propTypes = {
 function ClientNavbar() {
   const [isMinimized, setIsMinimized] = useState(false);
   const [greeting, setGreeting] = useState('');
-  const [clientName, setClientName] = useState('');
 
   useEffect(() => {
-    // Get current user's name
-    const currentUser = userService.getCurrentUser();
-    if (currentUser) {
-      setClientName(currentUser.name);
-    }
-
     // Set initial greeting
     const updateGreeting = () => {
       const hour = new Date().getHours();
@@ -83,13 +76,13 @@ function ClientNavbar() {
 
     // Set initial responsive state
     handleResize();
-
+    
     // Add event listeners
     window.addEventListener('resize', handleResize);
-
+    
     // Update greeting every minute
     const greetingInterval = setInterval(updateGreeting, 60000);
-
+    
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -106,21 +99,21 @@ function ClientNavbar() {
   };
 
   return (
-    <div
+    <div 
       className={`fixed h-screen bg-yellow-400 text-white shadow-lg flex flex-col transition-all duration-300 z-50 ${
         isMinimized ? 'w-20' : 'w-80'
       }`}
     >
       <div className="px-6 py-4 border-b border-yellow-300 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <img
-            src="/public/assets/Logo.png"
-            alt="Logo"
-            className="w-9 h-10.5 -translate-y-0.5"
-          />
+          <img 
+            src="/assets/Logo.png" 
+            alt="InnovaStruct Logo" 
+            className="w-9 h-10.5 -translate-y-0.5" 
+          /> 
           {!isMinimized && <h2 className="text-2xl font-bold">InnovaStruct</h2>}
         </div>
-        <button
+        <button 
           onClick={toggleMinimize}
           className="p-2 hover:bg-white hover:text-yellow-400 rounded-full transition-colors"
           aria-label={isMinimized ? "Expand sidebar" : "Minimize sidebar"}
@@ -139,7 +132,7 @@ function ClientNavbar() {
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-yellow-300 rounded-full"></div>
             </div>
             <div>
-              <p className="text-sm font-medium text-yellow-900">{clientName}</p>
+              <p className="text-sm font-medium text-yellow-900">Omindu Abewardane</p>
               <p className="text-xs text-yellow-800/70">{greeting}!</p>
             </div>
           </div>
@@ -155,8 +148,8 @@ function ClientNavbar() {
       </ul>
 
       <div className="p-4 mt-auto border-t border-yellow-300">
-        <Link
-          to="/type"
+        <Link 
+          to="/logout" 
           className={`btn ${isMinimized ? 'btn-square' : 'btn-wide'} bg-white text-red-600 hover:bg-red-50 hover:text-red-700 flex items-center justify-center gap-3 transition-colors`}
         >
           <LogOut className="w-5 h-5" />

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Bell, User, Palette, Shield, Globe } from 'lucide-react';
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/react';

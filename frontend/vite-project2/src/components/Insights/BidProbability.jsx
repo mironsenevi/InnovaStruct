@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Calculator, Building2, MapPin, DollarSign } from 'lucide-react';
 
 const BidProbability = () => {
